@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="android:windowNoTitle">true</item>
+
+    </style>
+
+    <!--ToolBar 文本字体样式-->
+    <style name="ToolBar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CollapsingToolbarTitleStyle.About" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="line_base">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+    </style>
+
+
+    <style name="line_horizontal_gray" parent="line_base">
+        <item name="android:background">@color/gray</item>
+    </style>
+
+    <!--cardStyle-->
+    <style name="CardStyle">
+        <item name="android:background">@color/brightgray</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:padding">5dp</item>
+    </style>
+    <style name="OnePixelActivity" parent="android:Theme.Holo.Light.NoActionBar">//无标题
+        <item name="android:windowIsTranslucent">true</item>//透明
+    </style>
+
+    作者：将行陌路
+    链接：http://www.jianshu.com/p/ef4a9531bc15
+    來源：简书
+    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+</resources>

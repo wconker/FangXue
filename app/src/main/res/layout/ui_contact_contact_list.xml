@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android.fangxue.ui.Contact.ContactList">
+
+    <include layout="@layout/layout_toolbar"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+       <GridView
+
+           android:id="@+id/gridview_select_student"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"></GridView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="100dp"
+            android:gravity="center|top"
+            android:orientation="vertical">
+
+            <com.android.fangxue.widget.CircleImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/img2"
+                android:src="@drawable/ic_22" />
+
+            <TextView
+                android:layout_marginTop="@dimen/text_margin"
+                android:id="@+id/class_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="四年级1班" />
+
+            <TextView
+                android:layout_marginTop="@dimen/text_margin"
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="古天乐" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

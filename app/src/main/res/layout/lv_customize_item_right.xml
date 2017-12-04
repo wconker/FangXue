@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/lv_customize_item_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/timg" />
+
+    <TextView
+        android:id="@+id/lv_customize_item_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:paddingLeft="6dp"
+        android:text="热干面"
+        android:textColor="#2F333A" />
+</LinearLayout>

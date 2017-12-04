@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/flash_start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/flash_ff" />
+
+    <LinearLayout
+        android:id="@+id/login_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="@dimen/app_bar_default_elevation">
+
+            <include layout="@layout/layout_toolbar">
+
+            </include>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/login_214" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/login_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_general_margin"
+            android:layout_marginStart="@dimen/default_general_margin"
+            android:layout_marginTop="@dimen/default_grow_margin"
+            android:background="@drawable/login_input_rounded_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/action_bar_default_height"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/et_username"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/default_general_margin"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:drawablePadding="@dimen/default_general_margin"
+                    android:drawableStart="@drawable/ic_login_username_default"
+                    android:ellipsize="start"
+                    android:hint="@string/login_hint_account"
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:textColor="@color/black_80"
+                    android:textColorHint="@color/gray_20"
+                    android:textSize="@dimen/default_medium_text_size" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@color/line_bg" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/action_bar_default_height"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/default_small_padding"
+                    android:background="@android:color/transparent"
+                    android:drawablePadding="@dimen/default_general_margin"
+                    android:drawableStart="@drawable/ic_login_password_default"
+                    android:hint="输入验证码"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:textColor="@color/black_80"
+                    android:textColorHint="@color/gray_20"
+                    android:textSize="@dimen/default_medium_text_size" />
+
+                <Button
+                    android:id="@+id/yzCode"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/border"
+                    android:text="获取验证码"
+                    android:textColor="@color/white" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_button_height"
+            android:layout_marginBottom="@dimen/default_general_margin"
+            android:layout_marginLeft="@dimen/default_general_margin"
+            android:layout_marginRight="@dimen/default_general_margin"
+            android:layout_marginTop="@dimen/default_long_margin"
+            android:background="@drawable/corner_btn"
+            android:gravity="center"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="@dimen/default_medium_text_size" />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top">
+
+            <TextView
+                android:id="@+id/demologin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:text="演示入口>>>"
+                android:textColor="@color/colorPrimary"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:gravity="center_horizontal"
+            android:text="请使用在老师登记处登记过的手机号码\n进行绑定登录！"
+            android:textColor="@color/gray_80" />
+    </LinearLayout>
+</LinearLayout>

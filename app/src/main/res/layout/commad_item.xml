@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_light" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="@dimen/default_grow_margin"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <com.android.fangxue.widget.CircleImageView
+            android:id="@+id/control1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/username" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/control2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="test" />
+
+            <TextView
+                android:id="@+id/control3"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/control2"
+                android:layout_marginLeft="5dp"
+                android:text="JSON(JavaScript Object Notation, JS 对象标记) 是一种轻量级的数据交换格式。它基于 ECMAScript (w3c制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

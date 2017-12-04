@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android.fangxue.ui.Detail.EditNode">
+
+    <include layout="@layout/layout_toolbar"></include>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/proSp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1">
+
+        </android.support.v7.widget.AppCompatSpinner>
+
+
+        <Button
+            android:id="@+id/timeSp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="填写时间" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_bg" />
+
+    <EditText
+        android:padding="5dp"
+        android:id="@+id/editText"
+        android:transitionName="text"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginLeft="@dimen/search_item_text_margin_top"
+        android:layout_marginRight="@dimen/search_item_text_margin_top"
+        android:layout_marginTop="5dp"
+        android:background="@color/sampleGray"
+        android:gravity="top"
+        android:hint="输入内容......" />
+
+    <EditText
+        android:id="@+id/worktime"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/search_item_text_margin_top"
+        android:layout_marginTop="5dp"
+        android:inputType="numberDecimal"
+        android:background="@null"
+        android:hint="工作时长" />
+</LinearLayout>
