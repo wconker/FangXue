@@ -163,6 +163,7 @@ public class HttpCenter {
                     if (messageCallBack != null) {
                         messageCallBack.onMessage(Data);
                     }
+
                     Log.v("File", Data);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -185,6 +186,7 @@ public class HttpCenter {
                     send(Str);
                 }
             } else if (JSONUtils.getInt(cmd, "code", -1) == -1) {
+
 
                 Log.e("登录失败", "登录失败");
 
@@ -212,7 +214,7 @@ public class HttpCenter {
                     SharedPrefsUtil.getValue(context, "loginXML", "mathinecode", ""),
                     "P");
 
-            Log.e("重连发送登录信息", reConnectStr );
+            Log.e("重连发送登录信息", "手机号码:" + Phone + reConnectStr);
             HttpCenter.webSocket.sendMessage(RequestBody.create(TEXT, reConnectStr));
             HttpCenter.ifErrorDisConnect = 0;
         } else if (Channel == 100) {
@@ -264,11 +266,11 @@ public class HttpCenter {
                 }
                 //检查断开前是否有需要发送的数据
                 if (!TempStringMessage.isEmpty()) {
-                    try {
-                        HttpCenter.webSocket.sendMessage(RequestBody.create(TEXT, TempStringMessage));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        HttpCenter.webSocket.sendMessage(RequestBody.create(TEXT, TempStringMessage));
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
                     TempStringMessage = "";
                 }
 
@@ -276,7 +278,7 @@ public class HttpCenter {
 
             @Override
             public void onFailure(IOException e, Response response) {
-                Log.v("onFailure", "websocket 连接问题走这里");
+                Log.v("onFailure", "websocket 执行onFailure");
                 HttpCenter.ifErrorDisConnect = 1;
                 initWebsocket();
             }
@@ -289,8 +291,6 @@ public class HttpCenter {
                 }
                 if (messageCallBack != null) {
                     JSONObject cmd = JSONUtils.StringToJSON(msg);
-                    //fileUtil.writeTxtToFile(getCurrentTime() + msg + "\r\n"); //log 记录
-
                     messageCallBack.onMessage(msg);
                     ResonseReconnect(msg);
                 }
@@ -306,7 +306,6 @@ public class HttpCenter {
             @Override
             public void onClose(int code, String reason) {
                 Log.v("onClose", "websocket onClose");
-                //initWebsocket();
             }
         });
     }

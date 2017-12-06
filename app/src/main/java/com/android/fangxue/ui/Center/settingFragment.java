@@ -68,6 +68,8 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
     TextView ChildName;
     @Bind(R.id.mobile)
     TextView mobile;
+    @Bind(R.id.versionOfcurrent)
+    TextView versionOfcurrent;
     @Bind(R.id.relationship_txt)
     TextView relationship_txt;
     @Bind(R.id.Childs)
@@ -272,6 +274,8 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
         mobile.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "mobile", ""));
         relationship_txt.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "relationship", ""));
         refresh.setRefreshing(false);
+
+        versionOfcurrent.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "version", "维护中"));
     }
 
     //点击底部tab页面切换时候调用

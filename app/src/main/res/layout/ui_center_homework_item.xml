@@ -107,14 +107,14 @@
 
 
             <TextView
-                android:lines="2"
-                android:ellipsize="end"
                 android:id="@+id/message_content"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:lineSpacingExtra="2dp"
-                android:lineSpacingMultiplier="1.5"
+                android:ellipsize="end"
+                android:maxEms="7"
+                android:maxLines="2"
                 android:textStyle="bold" />
 
 

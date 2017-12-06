@@ -143,15 +143,16 @@ public class SimpleCardFragment extends Fragment implements MessageCallBack {
             Log.e("课程表数据",s);
             list.clear();
             if (JSONUtils.getJSONArray(cmd, "data").length() > 0) {
-              Log.e("课程表",JSONUtils.getJSONArray(cmd, "data").length() +"个");
+              Log.e("课程表》0",JSONUtils.getJSONArray(cmd, "data").length() +"个");
                 Gson gson = new Gson();
                 Type type = new TypeToken<CourseBean>() {
                 }.getType();
                 CourseBean dataBean = gson.fromJson(String.valueOf(cmd), type);
                 list.addAll(dataBean.getData());
-            } else {
-                Log.e("课程表",JSONUtils.getJSONArray(cmd, "data").length() +"个");
-                list.add(null);
+                timeFull.setVisibility(View.VISIBLE);
+            }else {
+                list.clear();
+                timeFull.setVisibility(View.GONE);
             }
             adapter.notifyDataSetChanged();
         }

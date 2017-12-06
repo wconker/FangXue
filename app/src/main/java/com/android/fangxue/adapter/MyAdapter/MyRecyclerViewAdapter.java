@@ -46,10 +46,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (dataSource.size() > 0 && dataSource.get(0) != null)
+        Log.e("课程表返回view", "先进来再说"+viewType);
+        if (viewType != -1) {
             return new viewH(LayoutInflater.from(mContext).inflate(R.layout.utils_gridview_item, parent, false));
-        else
+        } else {
+            Log.e("课程表返回view", "Nu");
             return new viewH(LayoutInflater.from(mContext).inflate(R.layout.no_class, parent, false));
+        }
     }
 
     @Override
@@ -62,28 +65,29 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             t.setToNow(); // 取得系统时间。
             int hour = t.hour;    // 0-23
             int millin = t.minute;
+            String str = dataSource.get(position).getFromtime() + "一" + dataSource.get(position).getTotime();
+            if (h.time != null) {
+                h.time.setText(str);
+                h.teacher.setText(dataSource.get(position).getFromtime());
+                h.describe.setText(dataSource.get(position).getCoursename());
+                h.class_describe.setText(dataSource.get(position).getSectionname());
 
 
-            h.time.setText(dataSource.get(position).getFromtime() + "一" + dataSource.get(position).getTotime());
-            h.teacher.setText(dataSource.get(position).getFromtime());
-            h.describe.setText(dataSource.get(position).getCoursename());
-            h.class_describe.setText(dataSource.get(position).getSectionname());
-
-
-            if (TimeUtil.getCurrentTimeBySysbol(false).equals(dataSource.get(position).getStudyday())) {
-                if (position == 0) {
-                    changeStyle(((viewH) holder), R.color.gray_80, R.color.gray_80);
-                }
-                if (TimeCompare(dataSource.get(position).getTotime(), hour + ":" + millin) == 2) {
-                    if (TimeCompare(dataSource.get(position).getFromtime(), hour + ":" + millin) == 1)
-                        changeStyle(((viewH) holder), R.color.orange, R.color.orange);
-                    else {
-                        GradientDrawable gradientDrawable = (GradientDrawable) ((viewH) holder).gv_image.getBackground();
-                        gradientDrawable.setColor(ContextCompat.getColor(mContext, R.color.colorPrimary));
-                        ((viewH) holder).gv_image.setBackground(gradientDrawable);
+                if (TimeUtil.getCurrentTimeBySysbol(false).equals(dataSource.get(position).getStudyday())) {
+                    if (position == 0) {
+                        changeStyle(((viewH) holder), R.color.gray_80, R.color.gray_80);
                     }
-                } else {
-                    changeStyle(((viewH) holder), R.color.gray_80, R.color.gray_80);
+                    if (TimeCompare(dataSource.get(position).getTotime(), hour + ":" + millin) == 2) {
+                        if (TimeCompare(dataSource.get(position).getFromtime(), hour + ":" + millin) == 1)
+                            changeStyle(((viewH) holder), R.color.orange, R.color.orange);
+                        else {
+                            GradientDrawable gradientDrawable = (GradientDrawable) ((viewH) holder).gv_image.getBackground();
+                            gradientDrawable.setColor(ContextCompat.getColor(mContext, R.color.colorPrimary));
+                            ((viewH) holder).gv_image.setBackground(gradientDrawable);
+                        }
+                    } else {
+                        changeStyle(((viewH) holder), R.color.gray_80, R.color.gray_80);
+                    }
                 }
             }
         }
@@ -132,15 +136,26 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        Log.e("dataSource.size()", dataSource.size() + "个");
+
+        if (dataSource.size() < 1) {
+            return -1;
+        }
+            return 1;
+
+    }
+
     class viewH extends RecyclerView.ViewHolder {
 
-        public Button gv_image;
-        public TextView describe;
-        public TextView teacher;
-        public TextView time;
-        public TextView class_describe;
+        Button gv_image;
+        TextView describe;
+        TextView teacher;
+        TextView time;
+        TextView class_describe;
 
-        public viewH(View itemView) {
+        viewH(View itemView) {
             super(itemView);
             gv_image = itemView.findViewById(R.id.gv_image);
             describe = itemView.findViewById(R.id.describe);

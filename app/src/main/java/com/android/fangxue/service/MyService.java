@@ -133,6 +133,7 @@ public class MyService extends Service implements ServiceMessage {
                     "",
                     SharedPrefsUtil.getValue(context, "loginXML", "mathinecode", ""),
                     "P");
+            Log.e("服务从新登录发送", "手机号码:" + SharedPrefsUtil.getValue(context, "loginXML", "UserName", "") + loginCmd);
             messageCenter.SendYouMessage(loginCmd);
         } else {
             JSONObject cmd = JSONUtils.StringToJSON(msg);

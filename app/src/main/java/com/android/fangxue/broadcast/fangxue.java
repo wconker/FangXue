@@ -45,7 +45,7 @@ public class fangxue extends BroadcastReceiver {
 
         if (!SharedPrefsUtil.getValue(context, "systemXML", "notify", FinalField.POWER_OPEN)) {
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
-            Intent intent = new Intent(context, ActivityCenter.class);//将要跳转的界面
+            Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("www.baidu.com"));//将要跳转的界面
             builder.setAutoCancel(true);//点击后消失
             builder.setSmallIcon(R.mipmap.logo144);//设置通知栏消息标题的头像
             builder.setTicker("放学神器");

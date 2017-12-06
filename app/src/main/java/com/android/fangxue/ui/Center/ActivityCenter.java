@@ -42,6 +42,12 @@ public class ActivityCenter extends BaseActivity {
     protected int CurrentPos;
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mOnepxReceiver);
+    }
+
+    @Override
     public void setButterKnife() {
 
     }
@@ -50,7 +56,7 @@ public class ActivityCenter extends BaseActivity {
     protected void onResume() {
         super.onResume();
 
-        Log.e("返回时调用了","位置"+CurrentPos);
+        Log.e("返回时调用了", "位置" + CurrentPos);
         if (CurrentPos == 1)
             ((MessageFragment) mFragments.get(CurrentPos)).setCallBackInterFace();
     }
@@ -113,21 +119,13 @@ public class ActivityCenter extends BaseActivity {
             }
         });
 
-
-
-
         startService(new Intent(ActivityCenter.this, MyService.class));
-
-        OnePixelReceiver mOnepxReceiver = new OnePixelReceiver();
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("android.intent.action.SCREEN_OFF");
-        intentFilter.addAction("android.intent.action.SCREEN_ON");
-        intentFilter.addAction("android.intent.action.USER_PRESENT");
-        registerReceiver(mOnepxReceiver, intentFilter);
+        OnPiexMothed();
         //检查版本信息
-       CheckoutVersion();
-
+        CheckoutVersion();
     }
+
+    OnePixelReceiver mOnepxReceiver;
 
     void CheckoutVersion() {
 
@@ -135,6 +133,17 @@ public class ActivityCenter extends BaseActivity {
         manager.checkUpdateInfo();
 
 
+    }
+
+    //锁屏保留一个像素
+    void OnPiexMothed() {
+
+        mOnepxReceiver = new OnePixelReceiver();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("android.intent.action.SCREEN_OFF");
+        intentFilter.addAction("android.intent.action.SCREEN_ON");
+        intentFilter.addAction("android.intent.action.USER_PRESENT");
+        registerReceiver(mOnepxReceiver, intentFilter);
     }
 
     private void setFragmentList() {
@@ -146,4 +155,6 @@ public class ActivityCenter extends BaseActivity {
 
         mFragments.add(settingFragment.newInstance());
     }
+
+
 }

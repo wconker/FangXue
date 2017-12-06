@@ -232,9 +232,8 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
     public void onResume() {
         super.onResume();
         initHeader();
-
+        Log.d("哈哈哈哈哈", "onResume: "+((ActivityCenter) getActivity()).CurrentPos);
         if (((ActivityCenter) getActivity()).CurrentPos == 0) {
-
             setCallBackInterFace("me");
         }
     }
@@ -471,10 +470,11 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
 
                                 indexhomeworkBean.addAll(dataBean2.getData());
 
-                                setPage();
+
                             }
                             indexAdapter.notifyDataSetChanged();
                             HomeworkFlag = 100;
+                            setPage();
                         }
                         break;
                     case "system.getnewslist":

@@ -200,11 +200,11 @@ public class notifyFragment extends Fragment implements MessageCallBack {
             Type type = new TypeToken<Homework>() {
             }.getType();
             Homework dataBean = gson.fromJson(String.valueOf(cmd), type);
-
+            if (IsPull == 1) { //如果是哦下拉刷新则清理
+                list.clear();
+            }
             if (dataBean.getData().size() > 0) {
-                if (IsPull == 1) { //如果是哦下拉刷新则清理
-                    list.clear();
-                }
+
                 list.addAll(dataBean.getData());
                 listAdapter.notifyDataSetChanged();
             } else {

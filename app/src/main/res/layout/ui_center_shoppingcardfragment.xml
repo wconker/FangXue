@@ -396,6 +396,30 @@
                         </LinearLayout>
 
                         <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:text="当前版本" />
+
+                            <TextView
+                                android:id="@+id/versionOfcurrent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+
+                                android:text="班级" />
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:id="@+id/aboutus"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
@@ -416,6 +440,7 @@
                                 android:layout_marginRight="10dp"
                                 android:src="@drawable/trunright" />
                         </LinearLayout>
+
 
                         <LinearLayout
                             android:id="@+id/loginoout"

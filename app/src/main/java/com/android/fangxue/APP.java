@@ -7,6 +7,7 @@ import android.os.StrictMode;
 import android.util.Log;
 
 import com.android.fangxue.newwork.HttpCenter;
+import com.tencent.bugly.crashreport.CrashReport;
 
 /**
  * Created by wukanghui on 2017/8/9.
@@ -14,16 +15,20 @@ import com.android.fangxue.newwork.HttpCenter;
 
 public class APP extends Application {
     private PowerManager.WakeLock wakeLock;
+
     @Override
     public void onCreate() {
         super.onCreate();
+
+        CrashReport.initCrashReport(getApplicationContext(), "5082de40ae", false);
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
         StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
         HttpCenter.InstancesOkhttp();
-        HttpCenter.context =this;
+        HttpCenter.context = this;
 
 
     }
+
     /**
      * 获取电源锁，保持该服务在屏幕熄灭时仍然获取CPU时，保持运行
      */

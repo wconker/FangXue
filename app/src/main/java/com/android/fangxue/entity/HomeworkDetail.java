@@ -69,6 +69,16 @@ public class HomeworkDetail {
         private String worktitle;
         private String workcontent;
         private int releaser;
+
+        public String getLesson() {
+            return lesson;
+        }
+
+        public void setLesson(String lesson) {
+            this.lesson = lesson;
+        }
+
+        private String lesson;
         private int total;
         private List<PicBean> pic;
         public String getHeaderimg() {

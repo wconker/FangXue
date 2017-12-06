@@ -150,11 +150,11 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
     private void setValue(HomeworkDetail homeworkBean) {
         HomeworkDetail.DataBean dataBean = homeworkBean.getData().get(0);
         hoemwork_title.setText(dataBean.getWorktitle());
-        homework_author.setText(dataBean.getAuthor());
+        homework_author.setText(dataBean.getLesson());
         photo.setActivity(this);
         message_content.setText(dataBean.getWorkcontent());
         hoemwork_date.setText(dataBean.getReleasetime());
-
+        homework_teachername.setText(dataBean.getAuthor());
         for (int i = 0; i < dataBean.getPic().size(); i++) {
             preview.add(dataBean.getPic().get(i).getPicpath());
             imgc.add(dataBean.getPic().get(i).getThumbnail());

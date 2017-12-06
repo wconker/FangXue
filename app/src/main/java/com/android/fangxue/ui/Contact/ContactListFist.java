@@ -136,7 +136,7 @@ public class ContactListFist extends BaseActivity implements MessageCallBack {
         gridviewSelectStudent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                messageCenter.SendYouMessage(messageCenter.ChooseCommand().selectStudent(list.get(i).getStudentid()));
+//                messageCenter.SendYouMessage(messageCenter.ChooseCommand().selectStudent(list.get(i).getStudentid()));
             }
         });
 
@@ -163,7 +163,7 @@ public class ContactListFist extends BaseActivity implements MessageCallBack {
         }
 
         @Override
-        public void setViewContent(CommonViewHolder viewHolder, Children.DataBean dataBean) {
+        public void setViewContent(final CommonViewHolder viewHolder, Children.DataBean dataBean) {
 
 
             ImageView imageView = viewHolder.getView(R.id.img1);
@@ -175,7 +175,7 @@ public class ContactListFist extends BaseActivity implements MessageCallBack {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    messageCenter.SendYouMessage(messageCenter.ChooseCommand().selectStudent(list.get(viewHolder.getPostion()).getStudentid()));
                 }
             });
 

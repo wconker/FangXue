@@ -31,6 +31,7 @@ import com.android.fangxue.utils.CommonUtil;
 import com.android.fangxue.utils.JSONUtils;
 import com.android.fangxue.utils.SharedPrefsUtil;
 import com.android.fangxue.utils.TimeUtil;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -223,31 +224,32 @@ public class Login extends BaseActivity implements MessageCallBack {
                     break;
                 case "system.login":
                     JSONObject LoginObj = JSONUtils.getSingleJSON(cmd, "data", 0);
-                    Log.e("eee", JSONUtils.getString(LoginObj, "version"));
                     SharedPrefsUtil.putValue(context, "userXML", "userId", JSONUtils.getString(LoginObj, "parentid")); //用户id
                     SharedPrefsUtil.putValue(context, "userXML", "version", JSONUtils.getString(LoginObj, "version")); //版本信息
-                    getUserStudentList();
+                    if (SharedPrefsUtil.getValue(Login.this, "userXML", "studentid", "").equals("")) {//id 为空
+                        getUserStudentList();
+                    }
                     break;
                 case "parent.getstudentlist":
                     JSONArray students = JSONUtils.getJSONArray(cmd, "data");
                     //这里只判断studentid 为空的情况,防止和http中的重连重复发送导致crash
-                    if (SharedPrefsUtil.getValue(Login.this, "userXML", "studentid", "").equals("")) {
-                        try {
 
-                            if (students.length() > 1) {
+                    try {
 
-                                startActivity(new Intent(Login.this, ContactListFist.class));
-                                finish();
-                                //
-                            } else {
-                                JSONObject Somestudent = (JSONObject) students.get(0);
-                                messageCenter.SendYouMessage(messageCenter.ChooseCommand().selectStudent(JSONUtils.getInt(Somestudent, "studentid", 0)));
-                            }
+                        if (students.length() > 1) {
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                            startActivity(new Intent(Login.this, ContactListFist.class));
+                            finish();
+                            //
+                        } else {
+                            JSONObject Somestudent = (JSONObject) students.get(0);
+                            messageCenter.SendYouMessage(messageCenter.ChooseCommand().selectStudent(JSONUtils.getInt(Somestudent, "studentid", 0)));
                         }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
+
                     break;
                 case "parent.selectstudent":
                     JSONObject studentObj = JSONUtils.getSingleJSON(cmd, "data", 0);
@@ -317,6 +319,8 @@ public class Login extends BaseActivity implements MessageCallBack {
                     return;
                 } else {//
                     sendMLogin();
+                    //如果是点击按钮登录的则清空studentid避免当前账号对应到上一个账号的studentid中
+                    SharedPrefsUtil.putValue(Login.this, "userXML", "studentid", "");
                 }
                 break;
             case R.id.yzCode:
