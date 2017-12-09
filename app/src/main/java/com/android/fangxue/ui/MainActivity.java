@@ -221,7 +221,7 @@ public class MainActivity extends BaseActivity
     @Override
     public void onMessage(String str) {
 
-        Log.e("Conker", "MainActivity" + "====" + str);
+
         Observable.just(str)
                 .observeOn(AndroidSchedulers
                         .mainThread())

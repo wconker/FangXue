@@ -27,7 +27,7 @@ public class NewsInfo extends Activity {
         });
         WebView view = this.findViewById(R.id.webview);
         String url = "http://" + getIntent().getStringExtra("newInfo");
-        Log.e("C",url);
+
         //设置WebView属性，能够执行Javascript脚本
         view.getSettings().setJavaScriptEnabled(true);
         //加载需要显示的网页

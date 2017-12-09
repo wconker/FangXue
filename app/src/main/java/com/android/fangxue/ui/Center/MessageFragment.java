@@ -123,6 +123,6 @@ public class MessageFragment extends BaseFragment implements OnTabSelectListener
 
     @Override
     public void onTabReselect(int position) {
-        Log.e("Conekr", "现在是位置" + position);
+
     }
 }

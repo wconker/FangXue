@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -75,7 +76,12 @@ public class HttpCenter {
         serviceMessage = rserviceMessage;
     }
 
-    public void send(String str) {
+    private long prelongTim = 0;//定义上一次单击的时间
+
+    private long curTime = 1;
+
+
+    private void DealRun(final String str) {
         final String m = str;
         Log.e("Android发送了", str + "");
         Runnable runnable;
@@ -83,9 +89,8 @@ public class HttpCenter {
             @Override
             public void run() {
                 try {
-                    if (HttpCenter.webSocket != null) {
-                        HttpCenter.webSocket.sendMessage(RequestBody.create(TEXT, m));
-                    }
+
+                    HttpCenter.webSocket.sendMessage(RequestBody.create(TEXT, m));
                 } catch (IOException e) {
                     HttpCenter.webSocket = null;
                     initWebsocket();
@@ -95,6 +100,33 @@ public class HttpCenter {
             }
         };
         mExecutor.execute(runnable);
+    }
+
+
+    public void send(final String str) {
+        Log.e("Android发送了", "于发送");
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (HttpCenter.webSocket != null) {
+                    curTime = (new Date()).getTime();//本地单击的时间
+
+                    if ( (curTime - prelongTim) < 2000) {
+                        try {
+                            Thread.sleep(1000);
+                            DealRun(str);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        DealRun(str);
+                    }
+                }
+
+            }
+        }).start();
+
     }
 
     public void sendHeart(String str) {
@@ -176,6 +208,8 @@ public class HttpCenter {
     //重连
     private void ResonseReconnect(String s) {
         JSONObject cmd = JSONUtils.StringToJSON(s);
+
+
         if (JSONUtils.getString(cmd, "cmd").equals("system.login")) {
             //登录之后发送心跳包
             RunHeart();
@@ -188,8 +222,6 @@ public class HttpCenter {
             } else if (JSONUtils.getInt(cmd, "code", -1) == -1) {
 
 
-                Log.e("登录失败", "登录失败");
-
 //                try {
 //                    String Phone = SharedPrefsUtil.getValue(context, "loginXML", "UserName", "");
 //                    String reConnectStr = commandCenter.login(Phone,
@@ -201,6 +233,19 @@ public class HttpCenter {
 //                    e.printStackTrace();
 //                }
             }
+        } else {
+
+            Log.e("登录失败", "登录失败");
+            if (JSONUtils.getString(cmd, "message").equals("账号未登录!")) {
+                String Phone = SharedPrefsUtil.getValue(context, "loginXML", "UserName", "");
+                String reConnectStr = commandCenter.login(Phone,
+                        "",
+                        SharedPrefsUtil.getValue(context, "loginXML", "mathinecode", ""),
+                        "P");
+                Log.e("重连发送登录信息", "手机号码:" + Phone + reConnectStr);
+                send(reConnectStr);
+            }
+
         }
     }
 

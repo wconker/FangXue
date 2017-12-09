@@ -56,7 +56,7 @@ public class ActivityCenter extends BaseActivity {
     protected void onResume() {
         super.onResume();
 
-        Log.e("返回时调用了", "位置" + CurrentPos);
+
         if (CurrentPos == 1)
             ((MessageFragment) mFragments.get(CurrentPos)).setCallBackInterFace();
     }

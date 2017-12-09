@@ -121,7 +121,7 @@ public class HomeworkDetail extends BaseActivity implements View.OnClickListener
 
                     arrayList.clear();
                     imageList.removeAllViews();
-                    Log.e("ecsl", imageList.getChildCount() + "个");
+
                     int width = wm.getDefaultDisplay().getWidth() - 200;
                     int height = wm.getDefaultDisplay().getHeight() - 200;
 

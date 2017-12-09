@@ -52,7 +52,7 @@ public class CommandCenter {
 //        addData(jsonObj, "classid", classid);
         addData(jsonObj, "studyday", day);
         addCmd(jsonObjArr, "actual.getList", jsonObj);
-        Log.e("Conker", "-=-=-=-=" + jsonObjArr.toString());
+
         return jsonObjArr.toString();  //mCrypt.encrypt(JSONUtils.mapToJSON(map).toString());
 
     }
@@ -177,7 +177,6 @@ public class CommandCenter {
         addData(jsonObj, "usertype", userType);//P 是家长，T 是老师
         //外测json
         addCmd(jsonObjArr, "system.login", jsonObj);
-        Log.e("登录", jsonObjArr.toString());
         return jsonObjArr.toString();
     }
 
@@ -213,7 +212,7 @@ public class CommandCenter {
         addData(jsonObj, "relationship", relationship);
 
         //外测json
-        addCmd(jsonObjArr, "parent.updateInfo", jsonObj);
+        addCmd(jsonObjArr, "system.parentupdate", jsonObj);
         return jsonObjArr.toString();
     }
 

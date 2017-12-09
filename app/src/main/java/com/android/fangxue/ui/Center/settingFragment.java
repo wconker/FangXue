@@ -1,6 +1,7 @@
 package com.android.fangxue.ui.Center;
 
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -31,6 +32,7 @@ import com.android.fangxue.ui.Auth.Login;
 import com.android.fangxue.ui.Contact.ContactList;
 import com.android.fangxue.ui.Detail.FeedBack;
 import com.android.fangxue.ui.Detail.ParentsInfo;
+import com.android.fangxue.ui.MainActivity;
 import com.android.fangxue.ui.Us;
 import com.android.fangxue.utils.ACache;
 import com.android.fangxue.utils.JSONUtils;
@@ -43,6 +45,7 @@ import com.foamtrace.photopicker.ImageConfig;
 import com.foamtrace.photopicker.PhotoPickerActivity;
 import com.foamtrace.photopicker.SelectModel;
 import com.foamtrace.photopicker.intent.PhotoPickerIntent;
+import com.tbruyelle.rxpermissions.RxPermissions;
 
 import org.json.JSONObject;
 
@@ -58,6 +61,7 @@ import butterknife.OnClick;
 import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -118,12 +122,10 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
     private Observer<String> observer = new Observer<String>() {
         @Override
         public void onCompleted() {
-
         }
 
         @Override
         public void onError(Throwable e) {
-
         }
 
         @Override
@@ -138,7 +140,7 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
                     map.put("token", Token);
                     HttpCenter.send(new File(prepareImg), map);
                 }
-                Toast.FangXueToast(getActivity(), JSONUtils.getString(cmd, "message"));
+                Toast.FangXueToast(getActivity(), "正在上传。。。");
             }
             if (JSONUtils.getString(cmd, "cmd").equals("upload")) {
                 if (JSONUtils.getInt(cmd, "code", 0) == 1) {
@@ -178,19 +180,39 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
         txLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ImageConfig config = new ImageConfig();
-                config.minHeight = 400;
-                config.minWidth = 400;
-                config.mimeType = new String[]{"image/jpeg", "image/png"}; // 图片类型 image/gif ...
-                config.minSize = 1 * 1024 * 1024; // 1Mb 图片大小
-                PhotoPickerIntent intent = new PhotoPickerIntent(getActivity());
-                intent.setSelectModel(SelectModel.SINGLE);
-                intent.setShowCarema(true); // 是否显示拍照， 默认false
-// intent.setImageConfig(config);
-                startActivityForResult(intent, 120);
+                //这个请求事件我写在点击事件里面，
+                //点击button之后RxPermissions会为我们申请运行时权限
+                RxPermissions.getInstance(getActivity())
+                        .request(Manifest.permission.CAMERA)//这里填写所需要的权限
+                        .subscribe(new Action1<Boolean>() {
+                            @Override
+                            public void call(Boolean aBoolean) {
+                                if (aBoolean) {//true表示获取权限成功（注意这里在android6.0以下默认为true）
+                                    ChooseImage();
+                                } else {
+                                    Toast.FangXueToast(getActivity(), "请先允许访问您的摄像头及相册！");
+
+                                }
+                            }
+                        });
             }
         });
     }
+
+
+    void ChooseImage() {
+        ImageConfig config = new ImageConfig();
+        config.minHeight = 400;
+        config.minWidth = 400;
+        config.mimeType = new String[]{"image/jpeg", "image/png"}; // 图片类型 image/gif ...
+        config.minSize = 1 * 1024 * 1024; // 1Mb 图片大小
+        PhotoPickerIntent intent = new PhotoPickerIntent(getActivity());
+        intent.setSelectModel(SelectModel.SINGLE);
+        intent.setShowCarema(true); // 是否显示拍照， 默认false
+        // intent.setImageConfig(config);
+        startActivityForResult(intent, 120);
+    }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -274,7 +296,6 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
         mobile.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "mobile", ""));
         relationship_txt.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "relationship", ""));
         refresh.setRefreshing(false);
-
         versionOfcurrent.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "version", "维护中"));
     }
 

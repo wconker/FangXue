@@ -38,7 +38,6 @@ public class ShowBigImg extends AppCompatActivity {
         });
         toolbarTitle.setText("图片信息");
         String src = getIntent().getStringExtra("imgsrc");
-        Log.e("cc", src + "dd");
         Glide.with(this).load(src).placeholder(R.drawable.loading).into(showBgi);
     }
 }

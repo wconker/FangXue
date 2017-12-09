@@ -40,7 +40,7 @@ public class TeacherHolder extends BaseHolder<TeacherBean.DataBean> {
     @Override
     public void getData(final TeacherBean.DataBean d) {
 
-        Log.e("Conker", d.getTeachername() + "==" + d.getHeaderimg());
+
 //
         t = item.findViewById(R.id.teacher_category);
 //        ImageView phonecall = item.findViewById(R.id.call);

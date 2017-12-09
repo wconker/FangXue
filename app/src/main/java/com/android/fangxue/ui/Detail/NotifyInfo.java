@@ -180,7 +180,6 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i("通知详情页面销毁了", "");
     }
 
     @Override

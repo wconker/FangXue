@@ -46,11 +46,11 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Log.e("课程表返回view", "先进来再说"+viewType);
+
         if (viewType != -1) {
             return new viewH(LayoutInflater.from(mContext).inflate(R.layout.utils_gridview_item, parent, false));
         } else {
-            Log.e("课程表返回view", "Nu");
+
             return new viewH(LayoutInflater.from(mContext).inflate(R.layout.no_class, parent, false));
         }
     }
@@ -138,7 +138,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public int getItemViewType(int position) {
-        Log.e("dataSource.size()", dataSource.size() + "个");
+
 
         if (dataSource.size() < 1) {
             return -1;

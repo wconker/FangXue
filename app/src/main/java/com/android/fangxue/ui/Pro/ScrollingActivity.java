@@ -80,7 +80,7 @@ public class ScrollingActivity extends BaseActivity implements MessageCallBack {
         messageCenter.setCallBackInterFace(this);
         refresh.setRefreshing(true);
         messageCenter.SendYouMessage(messageCenter.ChooseCommand().project(String.valueOf(proId)));
-        Log.e("e", messageCenter.ChooseCommand().project(String.valueOf(proId)));
+
     }
     private void setRefresh() {
         refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

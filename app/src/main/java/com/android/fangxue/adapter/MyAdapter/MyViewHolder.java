@@ -24,8 +24,6 @@ public class MyViewHolder extends BaseHolder<WorkBean.DataBean> {
     @Override
     public void getData(WorkBean.DataBean d) {
 
-
-        Log.e("cONKER", d.getCname());
         TextView textView = item.findViewById(R.id.name);
         TextView contenttext = item.findViewById(R.id.contentText);
         TextView time = item.findViewById(R.id.time);

@@ -83,7 +83,6 @@ public class notifyFragment extends Fragment implements MessageCallBack {
 
     public void setCallBackInterFace(int typeId) {
         RequestId = typeId;
-        Log.d("id", "typeId:"+RequestId);
         if (firstLoad == 0) {
             refresh.setRefreshing(true);
             messageCenter.SendYouMessage(messageCenter.ChooseCommand().getlist_message(RequestId, "", "", 0),this);

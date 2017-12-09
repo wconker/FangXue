@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.provider.Settings;
@@ -31,6 +32,7 @@ import com.android.fangxue.utils.CommonUtil;
 import com.android.fangxue.utils.JSONUtils;
 import com.android.fangxue.utils.SharedPrefsUtil;
 import com.android.fangxue.utils.TimeUtil;
+import com.tbruyelle.rxpermissions.RxPermissions;
 import com.tencent.bugly.crashreport.CrashReport;
 
 import org.json.JSONArray;
@@ -45,6 +47,7 @@ import butterknife.OnClick;
 import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 
 public class Login extends BaseActivity implements MessageCallBack {
 
@@ -185,8 +188,6 @@ public class Login extends BaseActivity implements MessageCallBack {
     @Override
     protected void onResume() {
         super.onResume();
-
-
         messageCenter.setCallBackInterFace(this);
         CheckPermission();//权限判断
     }

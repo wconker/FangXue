@@ -74,9 +74,9 @@ public class ParentsInfo extends BaseActivity implements MessageCallBack {
         parentMobileEt.setText(SharedPrefsUtil.getValue(this, "userXML", "mobile", ""));
 
         String relaTemp = SharedPrefsUtil.getValue(this, "userXML", "relationship", "");
-        for(int i=0;i<array.length;i++){
-            if(array[i].equals(relaTemp)){
-                parentRelationship.setSelection(i,true);// 默认选中项
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].equals(relaTemp)) {
+                parentRelationship.setSelection(i, true);// 默认选中项
 
             }
         }
@@ -100,27 +100,25 @@ public class ParentsInfo extends BaseActivity implements MessageCallBack {
             public void onCompleted() {
 
             }
-
             @Override
             public void onError(Throwable e) {
 
             }
-
             @Override
             public void onNext(String s) {
                 Log.e("s", s);
                 JSONObject cmd = JSONUtils.StringToJSON(s);
-                if (JSONUtils.getString(cmd, "cmd").equals("parent.updateInfo")) {
+                if (JSONUtils.getString(cmd, "cmd").equals("system.parentupdate")) {
 
 
                     if (JSONUtils.getInt(cmd, "code", -1) == 1) {
-
                         UpdateLoaclData.setParentInfoForMoble(ParentsInfo.this, parentMobileEt.getText().toString());
                         UpdateLoaclData.setParentInfoForName(ParentsInfo.this, paremtNameEt.getText().toString());
                         UpdateLoaclData.setParentInfoForRelationship(ParentsInfo.this, RelationshipStr);
-                        Toast.FangXueToast(ParentsInfo.this, JSONUtils.getString(cmd, "message"));
+
                         finish();
                     }
+                    Toast.FangXueToast(ParentsInfo.this, JSONUtils.getString(cmd, "message"));
                 }
 
             }
@@ -136,7 +134,8 @@ public class ParentsInfo extends BaseActivity implements MessageCallBack {
             if (!paremtNameEt.getText().toString().isEmpty() && !parentMobileEt.getText().toString().isEmpty()) {
 
                 //提交发送协议
-                messageCenter.SendYouMessage(messageCenter.ChooseCommand().updateInfo(Integer.valueOf(SharedPrefsUtil.getValue(this, "userXML", "studentid", "0")),
+                messageCenter.SendYouMessage(messageCenter.ChooseCommand().updateInfo(Integer.valueOf(SharedPrefsUtil.getValue(this,
+                        "userXML", "studentid", "0")),
                         Integer.valueOf(SharedPrefsUtil.getValue(this, "userXML", "userId", "0")),
                         paremtNameEt.getText().toString(), parentMobileEt.getText().toString(), RelationshipStr));
             } else {

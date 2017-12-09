@@ -187,7 +187,7 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
             BindNews();
         } else {
 
-            messageCenter.SendYouMessage(messageCenter.ChooseCommand().getnotify(),this);
+            messageCenter.SendYouMessage(messageCenter.ChooseCommand().getnotify(), this);
         }
         if (atFirst == 0) {
 
@@ -232,7 +232,7 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
     public void onResume() {
         super.onResume();
         initHeader();
-        Log.d("哈哈哈哈哈", "onResume: "+((ActivityCenter) getActivity()).CurrentPos);
+
         if (((ActivityCenter) getActivity()).CurrentPos == 0) {
             setCallBackInterFace("me");
         }
@@ -301,12 +301,10 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
         indexhomeworklist.setNestedScrollingEnabled(false);
         indexhomeworklist.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-
         indexAdapter2 = new ListAdapter(getActivity(), indexhomeworkBean);
         indexlist.setNestedScrollingEnabled(false);
         indexlist.setAdapter(indexAdapter2);
         indexlist.setLayoutManager(new LinearLayoutManager(getActivity()));
-
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             vp.setNestedScrollingEnabled(false);
@@ -323,18 +321,12 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
             }
 
             @Override
             public void onPageSelected(int position) {
-
-
                 int dataT = position - Current;
-
                 ((SimpleCardFragment) mFragments.get(position)).lanchMessage(1, getDataTime(dataT), getDataTime(dataT) + "      星期" + StringData(position - Current));
-
-
             }
 
             @Override
@@ -349,17 +341,14 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
     }
 
     private void setPage() {
-
         if (fistLoad == 0) {
             ((SimpleCardFragment) mFragments.get(1)).lanchMessage(1, getDataTime(0), getDataTime(Current) + "    星期" + StringData(Current));
             Current = 1;
         }
         fistLoad = 1;
-
     }
 
     private void BindNews() {
-
         newsList = new ArrayList<>();
         newsAdapter = new NewsAdapter(getActivity(), newsList, R.layout.news);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -375,8 +364,6 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
             }
         });
         messageCenter.SendYouMessage(messageCenter.ChooseCommand().getNews());
-
-
     }
 
 
@@ -433,7 +420,7 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
                         }
                         String timeofplan = JSONUtils.getString(data, "timeofplan");
                         if (timeofplan != null && !JSONUtils.getString(data, "reason").equals("null") && !timeofplan.isEmpty()) {
-                            delayNotify.setText("【" + timeofplan + "】：" + "" + JSONUtils.getString(data, "reason"));
+                            delayNotify.setText("【预计" + timeofplan + "放学】：" + "" + JSONUtils.getString(data, "reason"));
                             delay_layout.setVisibility(View.VISIBLE);
                         } else {
                             delay_layout.setVisibility(View.GONE);
@@ -450,20 +437,19 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
                         }.getType();
 
                         if (HomeworkFlag == 100) {
-                            Log.e("获取作业信息", "homework" + s);
+
                             Homework dataBean1 = gson.fromJson(String.valueOf(cmd), type);
                             indexhomeworkBean.clear();
                             if (dataBean1.getData().size() > 0) {
 
                                 indexhomeworkBean.addAll(dataBean1.getData());
 
-
                             }
                             messageCenter.SendYouMessage(messageCenter.ChooseCommand().getlist_message(1, "", "", 0)); //获取作业
                             indexAdapter2.notifyDataSetChanged();
                             HomeworkFlag = 200;
                         } else {
-                            Log.e("获取通知信息", "notify" + s);
+
                             Homework dataBean2 = gson.fromJson(String.valueOf(cmd), type);
                             indexhomeworkBean.clear();
                             if (dataBean2.getData().size() > 0) {

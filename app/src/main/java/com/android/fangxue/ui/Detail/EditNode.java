@@ -185,7 +185,7 @@ public class EditNode extends BaseActivity implements View.OnClickListener,Messa
             for (ProBean.DataBean a : proBean.getData()) {
                 list.add(a.getXmmc());
             }
-            Log.e("Conker", list + "的数量==" + list.size());
+
             //传入的参数分别为 Context , 未选中项的textview , 数据源List
             adapter = new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_item, list);
             //第三步：为适配器设置下拉列表下拉时的菜单样式。
@@ -216,8 +216,7 @@ public class EditNode extends BaseActivity implements View.OnClickListener,Messa
 
     private void submit() {
 
-        Log.e("提交的信息", btn.getText() + "&" + editText.getText() + "&&" + proId + "&&" + worktime.getText().toString());
-        messageCenter.SendYouMessage(messageCenter.ChooseCommand().addWorkingLog(editText.getText().toString(),
+           messageCenter.SendYouMessage(messageCenter.ChooseCommand().addWorkingLog(editText.getText().toString(),
                 btn.getText().toString(),
                 worktime.getText().toString(),
                 proId));
@@ -226,7 +225,7 @@ public class EditNode extends BaseActivity implements View.OnClickListener,Messa
     @Override
     public void onMessage(String str) {
 
-        Log.e("Conker", "EditNode"  + mContext.getClass().getName()+"====");
+
         Observable.just(str)
                 .observeOn(AndroidSchedulers
                         .mainThread())
