@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/color/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/color/abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/color/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/color/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/color/abc_primary_text_material_light.xml",
+        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/color/abc_search_url_text.xml",
+        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/color/abc_search_url_text.xml"
+    }
+]
