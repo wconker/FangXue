@@ -16,12 +16,13 @@
         android:layout_margin="20dp"
         android:background="@color/white"
         android:gravity="start"
+        android:id="@+id/feedContext"
         android:hint="请输入您的宝贵建议"
         android:paddingLeft="5dp"
         android:paddingTop="5dp" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_submit"
         android:layout_width="match_parent"
         android:layout_height="@dimen/login_button_height"
         android:layout_marginBottom="@dimen/default_general_margin"

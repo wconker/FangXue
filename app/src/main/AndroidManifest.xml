@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.android.fangxue">
-
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -17,12 +18,12 @@
     <application
         android:name=".APP"
         android:allowBackup="true"
-        android:icon="@mipmap/logo_144_p"
+        android:icon="@mipmap/logo_desk"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/logo"
+        android:roundIcon="@mipmap/logo_desk"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:theme">
         <meta-data
             android:name="BUGLY_APPID"
             android:value="5082de40ae" />
@@ -34,11 +35,10 @@
         <meta-data
             android:name="BUGLY_APP_CHANNEL"
             android:value="1" />
-        <!-- 配置Bugly调试模式（true或者false）-->
+        <!-- 配置Bugly调试模式（true或者false） -->
         <meta-data
             android:name="BUGLY_ENABLE_DEBUG"
             android:value="true" />
-
 
         <!-- 主界面 -->
         <activity
@@ -91,7 +91,6 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden" />
 
-
         <receiver
             android:name=".broadcast.fangxue"
             android:enabled="true"
@@ -133,13 +132,14 @@
             android:screenOrientation="portrait"
             android:theme="@style/OnePixelActivity" />
 
-
         <receiver
             android:name=".service.OnePixelReceiver"
             android:enabled="true"
             android:exported="false" />
 
-        <activity android:name=".ui.Us"></activity>
+        <activity android:name=".ui.Us" />
+        <activity android:name=".ui.Auth.Reg" />
+        <activity android:name=".ui.Detail.T_ImageLoad"></activity>
     </application>
 
 </manifest>

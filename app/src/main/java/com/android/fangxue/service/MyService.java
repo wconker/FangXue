@@ -30,6 +30,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import okhttp3.RequestBody;
 import rx.schedulers.NewThreadScheduler;
 
@@ -97,8 +98,6 @@ public class MyService extends Service implements ServiceMessage {
      * 获取电源锁，保持该服务在屏幕熄灭时仍然获取CPU时，保持运行
      */
     private void acquireWakeLock() {
-
-
         if (null == wakeLock) {
             PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
             wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK
@@ -137,6 +136,7 @@ public class MyService extends Service implements ServiceMessage {
             messageCenter.SendYouMessage(loginCmd);
         } else {
             JSONObject cmd = JSONUtils.StringToJSON(msg);
+            //教室一键放学
             if (JSONUtils.getString(cmd, "cmd").equals("system.notify")) {
                 Intent broad = new Intent();
                 broad.setAction("com.fangxue.b");
@@ -145,22 +145,35 @@ public class MyService extends Service implements ServiceMessage {
                 sendBroadcast(broad);
 
             }
+            //学生离校
             if (JSONUtils.getString(cmd, "cmd").equals("class.notify")) {
                 Intent broad = new Intent();
                 broad.setAction("com.fangxue.b");
                 broad.putExtra("msg", JSONUtils.getString(cmd, "message"));
                 broad.putExtra("type", 2);
                 sendBroadcast(broad);
+
             }
-//            if (JSONUtils.getString(cmd, "cmd").equals("system.login")) {
-//                try {
-//                    Thread.sleep(5000);
-//                    messageCenter.SendYouMessage(messageCenter.ChooseCommand().heartbeat());
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//
-//            }
+            //通知未读
+            if (JSONUtils.getString(cmd, "cmd").equals("message.notice")) {
+                JSONObject ob = JSONUtils.getSingleJSON(cmd, "data", 0);
+                Intent broad = new Intent();
+                broad.setAction("com.fangxue.b");
+                broad.putExtra("msg", JSONUtils.getString(ob, "title"));
+                broad.putExtra("type", 3);
+                broad.putExtra("notify", JSONUtils.getString(ob, "id"));
+                sendBroadcast(broad);
+            }
+
+            //离线通知
+            if (JSONUtils.getString(cmd, "cmd").equals("system.offline")) {
+                Intent broad = new Intent();
+                broad.setAction("com.fangxue.b");
+                broad.putExtra("type", 123);
+                sendBroadcast(broad);
+            }
+
+
         }
 
 

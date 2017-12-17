@@ -412,7 +412,6 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
                         else {
                             titleArrived.setText("--:--");
                         }
-
                         if (leavetime != null && !leavetime.equals("null") && !leavetime.isEmpty())
                             studentLeave.setText(leavetime);
                         else {
@@ -437,13 +436,10 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
                         }.getType();
 
                         if (HomeworkFlag == 100) {
-
                             Homework dataBean1 = gson.fromJson(String.valueOf(cmd), type);
                             indexhomeworkBean.clear();
                             if (dataBean1.getData().size() > 0) {
-
                                 indexhomeworkBean.addAll(dataBean1.getData());
-
                             }
                             messageCenter.SendYouMessage(messageCenter.ChooseCommand().getlist_message(1, "", "", 0)); //获取作业
                             indexAdapter2.notifyDataSetChanged();

@@ -8,6 +8,7 @@ import android.content.IntentFilter;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
@@ -44,7 +45,7 @@ public class ActivityCenter extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unregisterReceiver(mOnepxReceiver);
+        //unregisterReceiver(mOnepxReceiver);
     }
 
     @Override
@@ -120,7 +121,7 @@ public class ActivityCenter extends BaseActivity {
         });
 
         startService(new Intent(ActivityCenter.this, MyService.class));
-        OnPiexMothed();
+       // OnPiexMothed();
         //检查版本信息
         CheckoutVersion();
     }
@@ -133,6 +134,12 @@ public class ActivityCenter extends BaseActivity {
         manager.checkUpdateInfo();
 
 
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        //super.onSaveInstanceState(outState, outPersistentState);
     }
 
     //锁屏保留一个像素

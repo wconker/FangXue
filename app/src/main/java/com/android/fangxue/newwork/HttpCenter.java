@@ -8,6 +8,7 @@ import com.android.fangxue.callback.ServiceMessage;
 import com.android.fangxue.utils.FileUtil;
 import com.android.fangxue.utils.JSONUtils;
 import com.android.fangxue.utils.SharedPrefsUtil;
+import com.android.fangxue.utils.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -89,15 +90,19 @@ public class HttpCenter {
             @Override
             public void run() {
                 try {
+                    try {
+                        HttpCenter.webSocket.sendMessage(RequestBody.create(TEXT, m));
+                    } catch (IOException e) {
+                        HttpCenter.webSocket = null;
+                        initWebsocket();
+                        TempStringMessage = m;
 
-                    HttpCenter.webSocket.sendMessage(RequestBody.create(TEXT, m));
-                } catch (IOException e) {
-                    HttpCenter.webSocket = null;
-                    initWebsocket();
-                    TempStringMessage = m;
-
+                    }
+                } catch (Exception ex) {
+                    Log.e("webscoket 出现问题", ex.getMessage());
                 }
             }
+
         };
         mExecutor.execute(runnable);
     }
@@ -112,7 +117,7 @@ public class HttpCenter {
                 if (HttpCenter.webSocket != null) {
                     curTime = (new Date()).getTime();//本地单击的时间
 
-                    if ( (curTime - prelongTim) < 2000) {
+                    if ((curTime - prelongTim) < 2000) {
                         try {
                             Thread.sleep(1000);
                             DealRun(str);
@@ -129,30 +134,8 @@ public class HttpCenter {
 
     }
 
-    public void sendHeart(String str) {
-        Log.v("发送的心跳包", str + "===");
-        final String m = str;
-        Runnable runnable;
-        runnable = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    if (HttpCenter.webSocket != null) {
-                        HttpCenter.webSocket.sendMessage(RequestBody.create(TEXT, m));
 
-                    }
-                } catch (IOException e) {
-                    HttpCenter.webSocket = null;
-                    initWebsocket();
-                    TempStringMessage = m;
-
-                }
-            }
-        };
-        mExecutor.execute(runnable);
-    }
-
-
+    //文件图片上传发送接口
     public static void send(File files, Map<String, String> params) {
 
         MultipartBody.Builder multipartBodyBuilder = new MultipartBody.Builder();
@@ -234,15 +217,13 @@ public class HttpCenter {
 //                }
             }
         } else {
-
-            Log.e("登录失败", "登录失败");
             if (JSONUtils.getString(cmd, "message").equals("账号未登录!")) {
                 String Phone = SharedPrefsUtil.getValue(context, "loginXML", "UserName", "");
                 String reConnectStr = commandCenter.login(Phone,
                         "",
                         SharedPrefsUtil.getValue(context, "loginXML", "mathinecode", ""),
                         "P");
-                Log.e("重连发送登录信息", "手机号码:" + Phone + reConnectStr);
+
                 send(reConnectStr);
             }
 
@@ -252,7 +233,6 @@ public class HttpCenter {
     private void Reconnect() throws IOException {
         //重连登录部分
         if (ifErrorDisConnect == 1) {
-
             String Phone = SharedPrefsUtil.getValue(context, "loginXML", "UserName", "");
             String reConnectStr = commandCenter.login(Phone,
                     "",
@@ -260,7 +240,7 @@ public class HttpCenter {
                     "P");
 
             Log.e("重连发送登录信息", "手机号码:" + Phone + reConnectStr);
-            HttpCenter.webSocket.sendMessage(RequestBody.create(TEXT, reConnectStr));
+            send(reConnectStr);
             HttpCenter.ifErrorDisConnect = 0;
         } else if (Channel == 100) {
             //连接服务部分
@@ -271,8 +251,9 @@ public class HttpCenter {
         }
     }
 
-    private void RunHeart() {
 
+    //发送心跳包
+    private void RunHeart() {
         if (Ding == null) {
             Ding = new Thread(new Runnable() {
                 @Override
@@ -282,12 +263,9 @@ public class HttpCenter {
                             Thread.sleep(30000);//休眠3秒
                             String reConnectStr = commandCenter.heartbeat();
                             send(reConnectStr);
-
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-
-
                     }
                 }
             });
@@ -323,7 +301,7 @@ public class HttpCenter {
 
             @Override
             public void onFailure(IOException e, Response response) {
-                Log.v("onFailure", "websocket 执行onFailure");
+                Log.e("onFailure", "websocket 执行onFailure");
                 HttpCenter.ifErrorDisConnect = 1;
                 initWebsocket();
             }
@@ -331,15 +309,18 @@ public class HttpCenter {
             @Override
             public void onMessage(ResponseBody message) throws IOException {
                 String msg = message.string();
+                Log.e("服务端返回", msg);
+                JSONObject cmd = JSONUtils.StringToJSON(msg);
+
+
+
                 if (serviceMessage != null) {
                     serviceMessage.onServiceMessage(msg);
                 }
                 if (messageCallBack != null) {
-                    JSONObject cmd = JSONUtils.StringToJSON(msg);
                     messageCallBack.onMessage(msg);
                     ResonseReconnect(msg);
                 }
-
 
             }
 

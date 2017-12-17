@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.android.fangxue.BuildConfig;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -438,6 +439,7 @@ public class CommandCenter {
         addData(jsonObj, "cbfl", 0);
         return jsonObj.toString();
     }
+
     /**
      * 获取上传头像的teken
      *
@@ -453,5 +455,46 @@ public class CommandCenter {
         addCmd(jsonObjArr, "system.token", jsonObj);
         return jsonObjArr.toString();
     }
+
+
+
+    /**
+     * 反馈信息
+     *
+     * @return
+     */
+    public String system_feedcontent(String feedcontent) {
+        jsonObj = new JSONObject();
+        jsonObjArr = new JSONObject();
+        //data部分
+        addData(jsonObj, "feedcontent", feedcontent);
+
+        //外测json
+        addCmd(jsonObjArr, "parent.sendfeedback", jsonObj);
+        return jsonObjArr.toString();
+    }
+
+    /**
+     * 注册
+     *
+     * @return
+     */
+    public String parent_regiest(String mobile, String code, String parentname, String password, String finger) {
+        jsonObj = new JSONObject();
+        jsonObjArr = new JSONObject();
+        //data部分
+        addData(jsonObj, "mobile", mobile);
+        addData(jsonObj, "code", code);
+        addData(jsonObj, "parentname", parentname);
+        addData(jsonObj, "password", password);
+        addData(jsonObj, "finger", finger);
+
+
+        //外测json
+        addCmd(jsonObjArr, "parent.regiest", jsonObj);
+        return jsonObjArr.toString();
+    }
+
+
 
 }

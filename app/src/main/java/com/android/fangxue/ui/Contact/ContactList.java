@@ -44,6 +44,7 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import rx.Observer;
 
 public class ContactList extends BaseActivity implements MessageCallBack {
@@ -111,25 +112,41 @@ public class ContactList extends BaseActivity implements MessageCallBack {
 
                 JSONObject cmd = JSONUtils.StringToJSON(s);
                 if (JSONUtils.getString(cmd, "cmd").equals("parent.getstudentlist")) {
-                    list.clear();
-                    Gson gson = new Gson();
-                    Type type = new TypeToken<Children>() {
-                    }.getType();
-                    Children children = gson.fromJson(String.valueOf(s), type);
-                    list.addAll(children.getData());
-                    adapter.notifyDataSetChanged();
+                    if (JSONUtils.getInt(cmd, "code", 0) == 1) {
+                        list.clear();
+                        Gson gson = new Gson();
+                        Type type = new TypeToken<Children>() {
+                        }.getType();
+                        Children children = gson.fromJson(String.valueOf(s), type);
+                        list.addAll(children.getData());
+                        adapter.notifyDataSetChanged();
+                    } else {
+                        pDialog.hide();
+                        new SweetAlertDialog(ContactList.this, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("Oops...")
+                                .setContentText(JSONUtils.getString(cmd, "message", "") + "!")
+                                .show();
+                    }
                 }
                 if (JSONUtils.getString(cmd, "cmd").equals("parent.selectstudent")) {
-                    JSONObject studentObj = JSONUtils.getSingleJSON(cmd, "data", 0);
-                    SharedPrefsUtil.putValue(ContactList.this, "userXML", "headerimg", JSONUtils.getString(studentObj, "headerimg")); //头像信息
-                    SharedPrefsUtil.putValue(ContactList.this, "userXML", "studentName", JSONUtils.getString(studentObj, "studentname")); //用户信息
-                    SharedPrefsUtil.putValue(ContactList.this, "userXML", "studentSchoolnm", JSONUtils.getString(studentObj, "schoolnm")); //用户信息
-                    SharedPrefsUtil.putValue(ContactList.this, "userXML", "studentClassname", JSONUtils.getString(studentObj, "classname")); //用户信息
-                    SharedPrefsUtil.putValue(ContactList.this, "userXML", "parentname", JSONUtils.getString(studentObj, "parentname")); //家长姓名
-                    SharedPrefsUtil.putValue(ContactList.this, "userXML", "relationship", JSONUtils.getString(studentObj, "relationship")); //家长关系
-                    SharedPrefsUtil.putValue(ContactList.this, "userXML", "mobile", JSONUtils.getString(studentObj, "mobile")); //家长电话
-                    SharedPrefsUtil.putValue(ContactList.this, "userXML", "studentid", JSONUtils.getString(studentObj, "studentid")); //用户信息
-                    finish();
+                    if (JSONUtils.getInt(cmd, "code", 0) == 1) {
+                        JSONObject studentObj = JSONUtils.getSingleJSON(cmd, "data", 0);
+                        SharedPrefsUtil.putValue(ContactList.this, "userXML", "headerimg", JSONUtils.getString(studentObj, "headerimg")); //头像信息
+                        SharedPrefsUtil.putValue(ContactList.this, "userXML", "studentName", JSONUtils.getString(studentObj, "studentname")); //用户信息
+                        SharedPrefsUtil.putValue(ContactList.this, "userXML", "studentSchoolnm", JSONUtils.getString(studentObj, "schoolnm")); //用户信息
+                        SharedPrefsUtil.putValue(ContactList.this, "userXML", "studentClassname", JSONUtils.getString(studentObj, "classname")); //用户信息
+                        SharedPrefsUtil.putValue(ContactList.this, "userXML", "parentname", JSONUtils.getString(studentObj, "parentname")); //家长姓名
+                        SharedPrefsUtil.putValue(ContactList.this, "userXML", "relationship", JSONUtils.getString(studentObj, "relationship")); //家长关系
+                        SharedPrefsUtil.putValue(ContactList.this, "userXML", "mobile", JSONUtils.getString(studentObj, "mobile")); //家长电话
+                        SharedPrefsUtil.putValue(ContactList.this, "userXML", "studentid", JSONUtils.getString(studentObj, "studentid")); //用户信息
+                        finish();
+                    } else {
+                        pDialog.hide();
+                        new SweetAlertDialog(ContactList.this, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("Oops...")
+                                .setContentText(JSONUtils.getString(cmd, "message", "") + "!")
+                                .show();
+                    }
                 }
             }
         };
@@ -165,6 +182,7 @@ public class ContactList extends BaseActivity implements MessageCallBack {
         DealMessageForMe(str, observer);
     }
 
+    private SweetAlertDialog pDialog;
 
     private class SelectStudentAdapter extends CommonAdapter<Children.DataBean> {
 
@@ -178,17 +196,15 @@ public class ContactList extends BaseActivity implements MessageCallBack {
 
         @Override
         public void setViewContent(final CommonViewHolder viewHolder, Children.DataBean dataBean) {
-
-
             ImageView imageView = viewHolder.getView(R.id.img1);
-
             if (dataBean.getHeaderimg() != null) {
                 Glide.with(mContext).load(dataBean.getHeaderimg()).into(imageView);
             }
-
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                  new SweetAlertDialog(ContactList.this, SweetAlertDialog.PROGRESS_TYPE)
+                            .setTitleText("登录中。。。").show();
                     messageCenter.SendYouMessage(messageCenter.ChooseCommand().selectStudent(list.get(viewHolder.getPostion()).getStudentid()));
                 }
             });

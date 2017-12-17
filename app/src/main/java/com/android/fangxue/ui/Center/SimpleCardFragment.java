@@ -83,6 +83,7 @@ public class SimpleCardFragment extends Fragment implements MessageCallBack {
 //        Log.e("Day", value + "--" + day);
 //        if (value == null) {
 
+
         tran.setVisibility(View.GONE);
         messageCenter.SendYouMessage(messageCenter.ChooseCommand().actual_getList( day),this);
 //     } else {

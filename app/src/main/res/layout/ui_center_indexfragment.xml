@@ -208,7 +208,9 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
-                    android:visibility="gone"></ListView>
+                    android:visibility="gone">
+
+                </ListView>
 
                 <ImageView
                     android:layout_width="300dp"

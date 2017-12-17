@@ -185,7 +185,6 @@ public class NotifyDetail extends BaseActivity implements View.OnClickListener, 
         sendObj(str);
     }
 
-
     @Override
     public void onClick(View view) {
 

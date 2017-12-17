@@ -27,6 +27,7 @@ import com.android.fangxue.base.BaseActivity;
 import com.android.fangxue.callback.MessageCallBack;
 import com.android.fangxue.newwork.MessageCenter;
 import com.android.fangxue.ui.Center.ActivityCenter;
+import com.android.fangxue.ui.Contact.ContactList;
 import com.android.fangxue.ui.Contact.ContactListFist;
 import com.android.fangxue.utils.CommonUtil;
 import com.android.fangxue.utils.JSONUtils;
@@ -44,6 +45,7 @@ import java.util.UUID;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
@@ -59,7 +61,8 @@ public class Login extends BaseActivity implements MessageCallBack {
     private Context context = this;
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
-
+@Bind(R.id.rightBtn)
+    TextView rightbtn;
     @Bind(R.id.et_username)
     EditText et_username;
     @Bind(R.id.et_password)
@@ -109,6 +112,8 @@ public class Login extends BaseActivity implements MessageCallBack {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
         backBtn.setVisibility(View.GONE);
+        rightbtn.setVisibility(View.GONE);
+        rightbtn.setText("注册");
         toolbarTitle.setText("放学神器登录");
         if (SharedPrefsUtil.getValue(this, "loginXML", "username", "").equals("13312345678")) {
             SharedPrefsUtil.putValue(Login.this, "userXML", "studentid", "");
@@ -213,66 +218,81 @@ public class Login extends BaseActivity implements MessageCallBack {
         return deviceUuid.toString();
     }
 
+    SweetAlertDialog pDialog;
 
     //根据返回数据操作
     void setValue(String s) {
         JSONObject cmd = JSONUtils.StringToJSON(s);
-        if (JSONUtils.getInt(cmd, "code", -1) == 1) {
 
-            switch (JSONUtils.getString(cmd, "cmd")) {
-                case "system.machinecode":
+        switch (JSONUtils.getString(cmd, "cmd")) {
+            case "system.machinecode":
+                if (JSONUtils.getInt(cmd, "code", -1) == 1) {
                     checkMachineCode();
-                    break;
-                case "system.login":
+                } else {
+                    loginView.setVisibility(View.VISIBLE);
+                    flashStart.setVisibility(View.GONE);
+
+                }
+                break;
+            case "system.login":
+                if (JSONUtils.getInt(cmd, "code", -1) == 1) {
+                    pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE)
+                            .setTitleText("登录中。。。");
+                    pDialog.show();
                     JSONObject LoginObj = JSONUtils.getSingleJSON(cmd, "data", 0);
                     SharedPrefsUtil.putValue(context, "userXML", "userId", JSONUtils.getString(LoginObj, "parentid")); //用户id
                     SharedPrefsUtil.putValue(context, "userXML", "version", JSONUtils.getString(LoginObj, "version")); //版本信息
+                    SharedPrefsUtil.putValue(context, "userXML", "mobile", JSONUtils.getString(LoginObj, "mobile")); //家长电话
                     if (SharedPrefsUtil.getValue(Login.this, "userXML", "studentid", "").equals("")) {//id 为空
                         getUserStudentList();
                     }
-                    break;
-                case "parent.getstudentlist":
-                    JSONArray students = JSONUtils.getJSONArray(cmd, "data");
-                    //这里只判断studentid 为空的情况,防止和http中的重连重复发送导致crash
+                } else {
+                    loginView.setVisibility(View.VISIBLE);
+                    flashStart.setVisibility(View.GONE);
+                    pDialog = new SweetAlertDialog(Login.this, SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("提示")
+                            .setContentText(JSONUtils.getString(cmd, "message", "") + "!");
+                    pDialog.show();
+                }
+                break;
+            case "parent.getstudentlist":
+                JSONArray students = JSONUtils.getJSONArray(cmd, "data");
+                //这里只判断studentid 为空的情况,防止和http中的重连重复发送导致crash
 
-                    try {
+                try {
 
-                        if (students.length() > 1) {
+                    if (students.length() > 1) {
 
-                            startActivity(new Intent(Login.this, ContactListFist.class));
-                            finish();
-                            //
-                        } else {
-                            JSONObject Somestudent = (JSONObject) students.get(0);
-                            messageCenter.SendYouMessage(messageCenter.ChooseCommand().selectStudent(JSONUtils.getInt(Somestudent, "studentid", 0)));
-                        }
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+                        startActivity(new Intent(Login.this, ContactListFist.class));
+                        finish();
+                        //
+                    } else {
+                        JSONObject Somestudent = (JSONObject) students.get(0);
+                        messageCenter.SendYouMessage(messageCenter.ChooseCommand().selectStudent(JSONUtils.getInt(Somestudent, "studentid", 0)));
                     }
 
-                    break;
-                case "parent.selectstudent":
-                    JSONObject studentObj = JSONUtils.getSingleJSON(cmd, "data", 0);
-                    SharedPrefsUtil.putValue(context, "userXML", "studentid", JSONUtils.getString(studentObj, "studentid")); //用户信息
-                    SharedPrefsUtil.putValue(context, "userXML", "studentName", JSONUtils.getString(studentObj, "studentname")); //用户信息
-                    SharedPrefsUtil.putValue(context, "userXML", "headerimg", JSONUtils.getString(studentObj, "headerimg")); //头像信息
-                    SharedPrefsUtil.putValue(context, "userXML", "studentSchoolnm", JSONUtils.getString(studentObj, "schoolnm")); //用户信息
-                    SharedPrefsUtil.putValue(context, "userXML", "studentClassname", JSONUtils.getString(studentObj, "classname")); //用户信息
-                    SharedPrefsUtil.putValue(context, "userXML", "parentname", JSONUtils.getString(studentObj, "parentname")); //家长姓名
-                    SharedPrefsUtil.putValue(context, "userXML", "relationship", JSONUtils.getString(studentObj, "relationship")); //家长关系
-                    SharedPrefsUtil.putValue(context, "userXML", "mobile", JSONUtils.getString(studentObj, "mobile")); //家长电话
-                    startActivity(new Intent(Login.this, ActivityCenter.class));
-                    finish();
-                    break;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
-            }
+                break;
+            case "parent.selectstudent":
+                JSONObject studentObj = JSONUtils.getSingleJSON(cmd, "data", 0);
+                SharedPrefsUtil.putValue(context, "userXML", "studentid", JSONUtils.getString(studentObj, "studentid")); //用户信息
+                SharedPrefsUtil.putValue(context, "userXML", "studentName", JSONUtils.getString(studentObj, "studentname")); //用户信息
+                SharedPrefsUtil.putValue(context, "userXML", "headerimg", JSONUtils.getString(studentObj, "headerimg")); //头像信息
+                SharedPrefsUtil.putValue(context, "userXML", "studentSchoolnm", JSONUtils.getString(studentObj, "schoolnm")); //用户信息
+                SharedPrefsUtil.putValue(context, "userXML", "studentClassname", JSONUtils.getString(studentObj, "classname")); //用户信息
+                SharedPrefsUtil.putValue(context, "userXML", "parentname", JSONUtils.getString(studentObj, "parentname")); //家长姓名
+                SharedPrefsUtil.putValue(context, "userXML", "relationship", JSONUtils.getString(studentObj, "relationship")); //家长关系
+                SharedPrefsUtil.putValue(context, "userXML", "mobile", JSONUtils.getString(studentObj, "mobile")); //家长电话
+                startActivity(new Intent(Login.this, ActivityCenter.class));
+                finish();
+                break;
 
-        } else {
-            loginView.setVisibility(View.VISIBLE);
-            flashStart.setVisibility(View.GONE);
-            Toast.makeText(mContext, JSONUtils.getString(cmd, "message"), Toast.LENGTH_SHORT).show();
         }
+
+
     }
 
     //发送只有机器代码的登录信息
@@ -310,10 +330,11 @@ public class Login extends BaseActivity implements MessageCallBack {
         messageCenter.SendYouMessage(messageCenter.ChooseCommand().sendcode(et_username.getText().toString(), "P"));
     }
 
-    @OnClick({R.id.btn_login, R.id.yzCode})
+    @OnClick({R.id.btn_login, R.id.yzCode,R.id.rightBtn})
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
+
                 //登录
                 boolean isNetConnected = CommonUtil.isNetworkAvailable(this);
                 if (!isNetConnected) {
@@ -331,6 +352,10 @@ public class Login extends BaseActivity implements MessageCallBack {
                     countDownTimer.start();
                     sendCode();
                 }
+                break;
+                case R.id.rightBtn:
+
+                    startActivity(new Intent(Login.this,Reg.class));
                 break;
 
         }
@@ -375,6 +400,9 @@ public class Login extends BaseActivity implements MessageCallBack {
     protected void onDestroy() {
         super.onDestroy();
         countDownTimer.onFinish();
+
+        if (pDialog != null)
+            pDialog.dismiss();
     }
 
     @Override

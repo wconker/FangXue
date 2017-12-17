@@ -58,6 +58,7 @@ import java.util.Map;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
@@ -82,6 +83,8 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
     LinearLayout parent_mobile;
     @Bind(R.id.parent)
     LinearLayout parent;
+    @Bind(R.id.share)
+    LinearLayout share;
     @Bind(R.id.cleancache)
     LinearLayout cleancache;
     @Bind(R.id.relationship)
@@ -148,7 +151,10 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
                     String path = JSONUtils.getString(object, "path");
                     Glide.with(getActivity()).load(path).into(txImg);
                     SharedPrefsUtil.putValue(getActivity(), "userXML", "headerimg", path);
-                    Toast.FangXueToast(getActivity(), JSONUtils.getString(cmd, "message"));
+                    new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE)
+                            .setTitleText("成功")
+                            .setContentText(JSONUtils.getString(cmd, "message"))
+                            .show();
                 }
             }
         }
@@ -247,7 +253,7 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
 
     }
 
-    @OnClick({R.id.parent, R.id.loginoout, R.id.relationship, R.id.parent_mobile, R.id.feedbacks, R.id.Childs, R.id.aboutus})
+    @OnClick({R.id.share, R.id.parent, R.id.loginoout, R.id.relationship, R.id.parent_mobile, R.id.feedbacks, R.id.Childs, R.id.aboutus})
     void click(View v) {
 
         switch (v.getId()) {
@@ -264,6 +270,13 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
                 break;
             case R.id.aboutus:
                 startActivity(new Intent(getActivity(), Us.class));
+                break;
+            case R.id.share:
+
+                Intent intent1 = new Intent(Intent.ACTION_SEND);
+                intent1.putExtra(Intent.EXTRA_TEXT, "放学神器家长版App，精准掌握孩子放学时间【http://fangxue.56pt.cn/fx/app/teacher.apk】");
+                intent1.setType("text/plain");
+                startActivity(Intent.createChooser(intent1, "放学神器家长版"));
                 break;
             case R.id.loginoout:
                 SharedPrefsUtil.putValue(getActivity(), "loginXML", "UserName", ""); //用户登录账号
@@ -418,7 +431,8 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
+            savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, rootView);
@@ -455,7 +469,6 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
                         clearAllCache(getActivity());
                         onPageChange();
                     }
-
                     @Override
                     public void doClick(int pos, View vi) {
                     }
