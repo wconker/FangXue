@@ -204,17 +204,6 @@ public class HttpCenter {
                 }
             } else if (JSONUtils.getInt(cmd, "code", -1) == -1) {
 
-
-//                try {
-//                    String Phone = SharedPrefsUtil.getValue(context, "loginXML", "UserName", "");
-//                    String reConnectStr = commandCenter.login(Phone,
-//                            "",
-//                            SharedPrefsUtil.getValue(context, "loginXML", "mathinecode", ""),
-//                            "P");
-//                    HttpCenter.webSocket.sendMessage(RequestBody.create(TEXT, reConnectStr));
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
             }
         } else {
             if (JSONUtils.getString(cmd, "message").equals("账号未登录!")) {
@@ -234,14 +223,17 @@ public class HttpCenter {
         //重连登录部分
         if (ifErrorDisConnect == 1) {
             String Phone = SharedPrefsUtil.getValue(context, "loginXML", "UserName", "");
-            String reConnectStr = commandCenter.login(Phone,
-                    "",
-                    SharedPrefsUtil.getValue(context, "loginXML", "mathinecode", ""),
-                    "P");
+            if(!Phone.isEmpty()) {
+                String reConnectStr = commandCenter.login(Phone,
+                        "",
+                        SharedPrefsUtil.getValue(context, "loginXML", "mathinecode", ""),
+                        "P");
+                send(reConnectStr);
+                HttpCenter.ifErrorDisConnect = 0;
+            }
 
-            Log.e("重连发送登录信息", "手机号码:" + Phone + reConnectStr);
-            send(reConnectStr);
-            HttpCenter.ifErrorDisConnect = 0;
+
+
         } else if (Channel == 100) {
             //连接服务部分
             if (serviceMessage != null)

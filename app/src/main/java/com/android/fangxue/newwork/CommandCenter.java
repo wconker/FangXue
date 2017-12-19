@@ -181,6 +181,30 @@ public class CommandCenter {
         return jsonObjArr.toString();
     }
 
+    /**
+     * 登录
+     *
+     * @param mobile
+     * @param code
+     * @param userType
+     * @return
+     */
+    public String login(String mobile, String password, String code, String finger, String userType) {
+        jsonObj = new JSONObject();
+        jsonObjArr = new JSONObject();
+        //data部分
+        addData(jsonObj, "mobile", mobile);
+        addData(jsonObj, "code", code);
+        addData(jsonObj, "finger", finger);
+        addData(jsonObj, "password", password);
+        addData(jsonObj, "version", BuildConfig.VERSION_NAME);
+        addData(jsonObj, "source", "Android");
+        addData(jsonObj, "usertype", userType);//P 是家长，T 是老师
+        //外测json
+        addCmd(jsonObjArr, "system.login", jsonObj);
+        return jsonObjArr.toString();
+    }
+
 
     /**
      * 选择学生
@@ -457,7 +481,6 @@ public class CommandCenter {
     }
 
 
-
     /**
      * 反馈信息
      *
@@ -495,6 +518,53 @@ public class CommandCenter {
         return jsonObjArr.toString();
     }
 
+    /**
+     * 获取学校
+     *
+     * @return
+     */
+    public String School_getList() {
+        jsonObj = new JSONObject();
+        addData(jsonObj, "cmd", "school.getList");
+        return jsonObj.toString();
+
+    }
+
+    /**
+     * 新增班级
+     *
+     * @return
+     */
+    public String class_addInfo(int schoolid, int grade, String classname) {
+        jsonObj = new JSONObject();
+        jsonObjArr = new JSONObject();
+        //data部分
+        addData(jsonObj, "schoolid", schoolid);
+        addData(jsonObj, "classname", classname);
+        addData(jsonObj, "grade", grade);
+
+        //外测json
+        addCmd(jsonObjArr, "class.addInfo", jsonObj);
+        return jsonObjArr.toString();
+    }
+
+    /**
+     * 新增学生
+     *
+     * @return
+     */
+    public String student_addInfo(int classid, String studentno, String studentname) {
+        jsonObj = new JSONObject();
+        jsonObjArr = new JSONObject();
+        //data部分
+
+        addData(jsonObj, "classid", classid);
+        addData(jsonObj, "studentno", studentno);
+        addData(jsonObj, "studentname", studentname);
+        //外测json
+        addCmd(jsonObjArr, "student.addInfo", jsonObj);
+        return jsonObjArr.toString();
+    }
 
 
 }

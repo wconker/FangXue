@@ -307,6 +307,7 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
         classinfo.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "studentClassname", ""));
         parentName.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "parentname", ""));
         mobile.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "mobile", ""));
+        if(SharedPrefsUtil.getValue(getActivity(), "userXML", "relationship", "")!=null&&!SharedPrefsUtil.getValue(getActivity(), "userXML", "relationship", "").equals("null"))
         relationship_txt.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "relationship", ""));
         refresh.setRefreshing(false);
         versionOfcurrent.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "version", "维护中"));

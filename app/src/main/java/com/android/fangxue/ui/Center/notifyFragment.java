@@ -73,14 +73,10 @@ public class notifyFragment extends Fragment implements MessageCallBack {
 
         return new notifyFragment();
     }
-
     @Override
     public void onResume() {
         super.onResume();
-
     }
-
-
     public void setCallBackInterFace(int typeId) {
         RequestId = typeId;
         if (firstLoad == 0) {

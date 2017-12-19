@@ -3,6 +3,7 @@ package com.android.fangxue.ui.Auth;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.provider.Settings;
@@ -21,6 +22,7 @@ import com.android.fangxue.R;
 import com.android.fangxue.callback.MessageCallBack;
 import com.android.fangxue.newwork.MessageCenter;
 import com.android.fangxue.utils.JSONUtils;
+import com.android.fangxue.utils.SharedPrefsUtil;
 import com.android.fangxue.utils.Toast;
 import com.android.fangxue.widget.CircleImageView;
 
@@ -81,11 +83,15 @@ public class Reg extends Activity implements MessageCallBack {
             switch (JSONUtils.getString(cmd, "cmd")) {
 
                 case "parent.regiest":
-
                     if (JSONUtils.getInt(cmd, "code", -1) == 1) {
+                        SharedPrefsUtil.putValue(Reg.this, "loginXML", "UserName", etMobile.getText().toString());
+                        SharedPrefsUtil.putValue(Reg.this, "loginXML", "password", etPwd.getText().toString());
+
                         finish();
-                    }else {
-                        Toast.FangXueToast(Reg.this,JSONUtils.getString(cmd, "message", ""));
+//                        startActivity(new Intent(Reg.this, Guide_Res.class));
+//
+                    } else {
+                        Toast.FangXueToast(Reg.this, JSONUtils.getString(cmd, "message", ""));
                     }
                     break;
             }

@@ -5,7 +5,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.provider.Settings;
@@ -20,21 +19,17 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.fangxue.R;
 import com.android.fangxue.base.BaseActivity;
 import com.android.fangxue.callback.MessageCallBack;
 import com.android.fangxue.newwork.MessageCenter;
 import com.android.fangxue.ui.Center.ActivityCenter;
-import com.android.fangxue.ui.Contact.ContactList;
 import com.android.fangxue.ui.Contact.ContactListFist;
 import com.android.fangxue.utils.CommonUtil;
 import com.android.fangxue.utils.JSONUtils;
 import com.android.fangxue.utils.SharedPrefsUtil;
-import com.android.fangxue.utils.TimeUtil;
-import com.tbruyelle.rxpermissions.RxPermissions;
-import com.tencent.bugly.crashreport.CrashReport;
+import com.android.fangxue.utils.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,7 +44,6 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
 
 public class Login extends BaseActivity implements MessageCallBack {
 
@@ -58,10 +52,16 @@ public class Login extends BaseActivity implements MessageCallBack {
     ImageView flashStart;
     @Bind(R.id.login_view)
     LinearLayout loginView;
+    @Bind(R.id.login_pwd)
+    Button loginPwd;
+    @Bind(R.id.login_yzcode)
+    Button loginYzcode;
+    @Bind(R.id.password)
+    EditText password;
     private Context context = this;
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
-@Bind(R.id.rightBtn)
+    @Bind(R.id.rightBtn)
     TextView rightbtn;
     @Bind(R.id.et_username)
     EditText et_username;
@@ -78,6 +78,7 @@ public class Login extends BaseActivity implements MessageCallBack {
     LinearLayout loginLl;
     @Bind(R.id.btn_login)
     Button btnLogin;
+
     @Bind(R.id.yzCode)
     Button yzCode;
     private Context mContext = this;
@@ -112,7 +113,7 @@ public class Login extends BaseActivity implements MessageCallBack {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
         backBtn.setVisibility(View.GONE);
-        rightbtn.setVisibility(View.GONE);
+        rightbtn.setVisibility(View.VISIBLE);
         rightbtn.setText("注册");
         toolbarTitle.setText("放学神器登录");
         if (SharedPrefsUtil.getValue(this, "loginXML", "username", "").equals("13312345678")) {
@@ -243,7 +244,7 @@ public class Login extends BaseActivity implements MessageCallBack {
                     SharedPrefsUtil.putValue(context, "userXML", "userId", JSONUtils.getString(LoginObj, "parentid")); //用户id
                     SharedPrefsUtil.putValue(context, "userXML", "version", JSONUtils.getString(LoginObj, "version")); //版本信息
                     SharedPrefsUtil.putValue(context, "userXML", "mobile", JSONUtils.getString(LoginObj, "mobile")); //家长电话
-                    if (SharedPrefsUtil.getValue(Login.this, "userXML", "studentid", "").equals("")) {//id 为空
+                    if (SharedPrefsUtil.getValue(Login.this, "userXML", "studentid", "").equals("")) {//studentid 如果为空，就调学生列表接口
                         getUserStudentList();
                     }
                 } else {
@@ -257,22 +258,25 @@ public class Login extends BaseActivity implements MessageCallBack {
                 break;
             case "parent.getstudentlist":
                 JSONArray students = JSONUtils.getJSONArray(cmd, "data");
-                //这里只判断studentid 为空的情况,防止和http中的重连重复发送导致crash
+                if (JSONUtils.getInt(cmd, "code", 0) == 1) {
+                    //这里只判断studentid 为空的情况,防止和http中的重连重复发送导致crash
+                    try {
 
-                try {
+                        if (students.length() > 1) {
 
-                    if (students.length() > 1) {
+                            startActivity(new Intent(Login.this, ContactListFist.class));
+                            finish();
+                            //
+                        } else {
+                            JSONObject Somestudent = (JSONObject) students.get(0);
+                            messageCenter.SendYouMessage(messageCenter.ChooseCommand().selectStudent(JSONUtils.getInt(Somestudent, "studentid", 0)));
+                        }
 
-                        startActivity(new Intent(Login.this, ContactListFist.class));
-                        finish();
-                        //
-                    } else {
-                        JSONObject Somestudent = (JSONObject) students.get(0);
-                        messageCenter.SendYouMessage(messageCenter.ChooseCommand().selectStudent(JSONUtils.getInt(Somestudent, "studentid", 0)));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                } else {
+                    startActivity(new Intent(Login.this, Guide_Res.class));
                 }
 
                 break;
@@ -301,8 +305,10 @@ public class Login extends BaseActivity implements MessageCallBack {
         if (!SharedPrefsUtil.getValue(this, "loginXML", "UserName", "").equals("")) {
             et_username.setText(SharedPrefsUtil.getValue(this, "loginXML", "UserName", ""));
             et_password.setText(SharedPrefsUtil.getValue(this, "loginXML", "UserPWD", ""));
+            Log.e("看看有没有", "sendMess: " + et_username.getText().toString());
             messageCenter.SendYouMessage(
                     messageCenter.ChooseCommand().login(et_username.getText().toString(),
+                            SharedPrefsUtil.getValue(Login.this, "loginXML", "password", ""),
                             "",
                             MathineCode(),
                             "P"));
@@ -330,11 +336,10 @@ public class Login extends BaseActivity implements MessageCallBack {
         messageCenter.SendYouMessage(messageCenter.ChooseCommand().sendcode(et_username.getText().toString(), "P"));
     }
 
-    @OnClick({R.id.btn_login, R.id.yzCode,R.id.rightBtn})
+    @OnClick({R.id.btn_login, R.id.yzCode, R.id.rightBtn, R.id.login_yzcode})
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
-
                 //登录
                 boolean isNetConnected = CommonUtil.isNetworkAvailable(this);
                 if (!isNetConnected) {
@@ -347,15 +352,22 @@ public class Login extends BaseActivity implements MessageCallBack {
                 break;
             case R.id.yzCode:
                 if (et_username.getText().toString().isEmpty()) {
-                    com.android.fangxue.utils.Toast.FangXueToast(context, "请检查手机号码！");
+                    Toast.FangXueToast(context, "请检查手机号码！");
                 } else {
                     countDownTimer.start();
                     sendCode();
                 }
                 break;
-                case R.id.rightBtn:
 
-                    startActivity(new Intent(Login.this,Reg.class));
+            case R.id.rightBtn:
+
+                startActivity(new Intent(Login.this, Reg.class));
+                break;
+            case R.id.login_yzcode:
+
+                et_password.setVisibility(View.GONE);
+                password.setVisibility(View.VISIBLE);
+                yzCode.setVisibility(View.GONE);
                 break;
 
         }
