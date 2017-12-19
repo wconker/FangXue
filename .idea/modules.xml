@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FangXue.iml" filepath="$PROJECT_DIR$/FangXue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module/FlycoTabLayout_Lib/FlycoTabLayout_Lib.iml" filepath="$PROJECT_DIR$/Module/FlycoTabLayout_Lib/FlycoTabLayout_Lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module/PhotoPicker/PhotoPicker.iml" filepath="$PROJECT_DIR$/Module/PhotoPicker/PhotoPicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Transferee/Transferee.iml" filepath="$PROJECT_DIR$/Transferee/Transferee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UniversalLoader/UniversalLoader.iml" filepath="$PROJECT_DIR$/UniversalLoader/UniversalLoader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module/autoScrollViewPager/autoScrollViewPager.iml" filepath="$PROJECT_DIR$/Module/autoScrollViewPager/autoScrollViewPager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module/library/library.iml" filepath="$PROJECT_DIR$/Module/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module/sweetDialog/sweetDialog.iml" filepath="$PROJECT_DIR$/Module/sweetDialog/sweetDialog.iml" />
+    </modules>
+  </component>
+</project>

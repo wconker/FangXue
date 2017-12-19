@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/ic_launcher.png",
+        "source": "/Users/wukanghui/.android/build-cache/e29943b791bebe0a8fdc4e73b7dd53b2ea081acb/output/res/drawable-xxhdpi-v4/ic_launcher.png"
+    },
+    {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/ic_launcher.png",
         "source": "/Users/conker/.android/build-cache/ac763a61d611dcb4c2122a73de7617cc5b5b2dd9/output/res/drawable-xxhdpi-v4/ic_launcher.png"
     }

@@ -1,5 +1,48 @@
 [
     {
+        "outputFile": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-w480dp-v13/values-w480dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 61,
+                    "endOffset": 112
+                },
+                "from": {
+                    "file": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/values-w480dp/values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 61,
+                        "endOffset": 113
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 117,
+                    "endColumn": 71,
+                    "endOffset": 184
+                },
+                "from": {
+                    "file": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/values-w480dp/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 118,
+                        "endColumn": 71,
+                        "endOffset": 185
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-w480dp-v13/values-w480dp-v13.xml",
         "map": [
             {

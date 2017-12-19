@@ -141,7 +141,8 @@
         <activity android:name=".ui.Us" />
         <activity android:name=".ui.Auth.Reg" />
         <activity android:name=".ui.Detail.T_ImageLoad" />
-        <activity android:name=".ui.Auth.Guide_Res"></activity>
+        <activity android:name=".ui.Auth.Guide_Res" />
+        <activity android:name=".ui.Detail.ReSetPwd"></activity>
     </application>
 
 </manifest>

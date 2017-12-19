@@ -47,7 +47,7 @@ import rx.android.schedulers.AndroidSchedulers;
 
 public class Login extends BaseActivity implements MessageCallBack {
 
-
+    private Context context = this;
     @Bind(R.id.flash_start)
     ImageView flashStart;
     @Bind(R.id.login_view)
@@ -58,7 +58,6 @@ public class Login extends BaseActivity implements MessageCallBack {
     Button loginYzcode;
     @Bind(R.id.password)
     EditText password;
-    private Context context = this;
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
     @Bind(R.id.rightBtn)
@@ -243,6 +242,8 @@ public class Login extends BaseActivity implements MessageCallBack {
                     JSONObject LoginObj = JSONUtils.getSingleJSON(cmd, "data", 0);
                     SharedPrefsUtil.putValue(context, "userXML", "userId", JSONUtils.getString(LoginObj, "parentid")); //用户id
                     SharedPrefsUtil.putValue(context, "userXML", "version", JSONUtils.getString(LoginObj, "version")); //版本信息
+                    SharedPrefsUtil.putValue(context, "loginXML", "password", password.getText().toString());
+
                     SharedPrefsUtil.putValue(context, "userXML", "mobile", JSONUtils.getString(LoginObj, "mobile")); //家长电话
                     if (SharedPrefsUtil.getValue(Login.this, "userXML", "studentid", "").equals("")) {//studentid 如果为空，就调学生列表接口
                         getUserStudentList();
@@ -336,7 +337,7 @@ public class Login extends BaseActivity implements MessageCallBack {
         messageCenter.SendYouMessage(messageCenter.ChooseCommand().sendcode(et_username.getText().toString(), "P"));
     }
 
-    @OnClick({R.id.btn_login, R.id.yzCode, R.id.rightBtn, R.id.login_yzcode})
+    @OnClick({R.id.btn_login, R.id.yzCode, R.id.login_pwd, R.id.rightBtn, R.id.login_yzcode})
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
@@ -364,7 +365,12 @@ public class Login extends BaseActivity implements MessageCallBack {
                 startActivity(new Intent(Login.this, Reg.class));
                 break;
             case R.id.login_yzcode:
+                et_password.setVisibility(View.VISIBLE);
+                password.setVisibility(View.GONE);
+                yzCode.setVisibility(View.VISIBLE);
 
+                break;
+            case R.id.login_pwd:
                 et_password.setVisibility(View.GONE);
                 password.setVisibility(View.VISIBLE);
                 yzCode.setVisibility(View.GONE);

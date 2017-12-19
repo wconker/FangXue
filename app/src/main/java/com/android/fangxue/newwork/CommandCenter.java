@@ -567,4 +567,22 @@ public class CommandCenter {
     }
 
 
+    /**
+     * 修改密码
+     *
+     * @return
+     */
+    public String system_modifypassword(String password, String code) {
+        jsonObj = new JSONObject();
+        jsonObjArr = new JSONObject();
+        //data部分
+
+        addData(jsonObj, "studentno", password);
+        addData(jsonObj, "studentname", code);
+        //外测json
+        addCmd(jsonObjArr, "system.modifypassword", jsonObj);
+        return jsonObjArr.toString();
+    }
+
+
 }

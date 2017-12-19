@@ -1,19 +1,11 @@
 [
     {
-        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_fade_out.xml",
-        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/anim/abc_fade_out.xml"
-    },
-    {
-        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_slide_in_top.xml",
-        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/anim/abc_slide_in_top.xml"
-    },
-    {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_fade_in.xml",
         "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/anim/abc_fade_in.xml"
     },
     {
-        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/modal_out.xml",
-        "source": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/src/main/res/anim/modal_out.xml"
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_slide_in_top.xml",
+        "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/anim/abc_slide_in_top.xml"
     },
     {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_slide_out_bottom.xml",
@@ -28,16 +20,24 @@
         "source": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/src/main/res/anim/success_mask_layout.xml"
     },
     {
-        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/error_x_in.xml",
-        "source": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/src/main/res/anim/error_x_in.xml"
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/release/anim/success_mask_layout.xml",
+        "source": "/Fangxue/Git/FangXue/Module/sweetDialog/src/main/res/anim/success_mask_layout.xml"
+    },
+    {
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_slide_out_top.xml",
+        "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/release/anim/success_bow_roate.xml",
+        "source": "/Fangxue/Git/FangXue/Module/sweetDialog/src/main/res/anim/success_bow_roate.xml"
     },
     {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_slide_out_top.xml",
         "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/anim/abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/success_bow_roate.xml",
-        "source": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/src/main/res/anim/success_bow_roate.xml"
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_fade_in.xml",
+        "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/anim/abc_fade_in.xml"
     },
     {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/modal_in.xml",
@@ -46,5 +46,53 @@
     {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_slide_in_bottom.xml",
         "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_fade_out.xml",
+        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_slide_in_top.xml",
+        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/modal_out.xml",
+        "source": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/src/main/res/anim/modal_out.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/error_x_in.xml",
+        "source": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/src/main/res/anim/error_x_in.xml"
+    },
+    {
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_fade_out.xml",
+        "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/release/anim/modal_out.xml",
+        "source": "/Fangxue/Git/FangXue/Module/sweetDialog/src/main/res/anim/modal_out.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/release/anim/success_bow_roate.xml",
+        "source": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/src/main/res/anim/success_bow_roate.xml"
+    },
+    {
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/release/anim/error_frame_in.xml",
+        "source": "/Fangxue/Git/FangXue/Module/sweetDialog/src/main/res/anim/error_frame_in.xml"
+    },
+    {
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/release/anim/modal_in.xml",
+        "source": "/Fangxue/Git/FangXue/Module/sweetDialog/src/main/res/anim/modal_in.xml"
+    },
+    {
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/release/anim/error_x_in.xml",
+        "source": "/Fangxue/Git/FangXue/Module/sweetDialog/src/main/res/anim/error_x_in.xml"
+    },
+    {
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/release/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/anim/abc_slide_out_bottom.xml"
     }
 ]

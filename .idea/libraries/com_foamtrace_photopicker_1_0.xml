@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.foamtrace:photopicker-1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/2b6c6a90d39985301ef7746395ccc3d48ca659b9/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/2b6c6a90d39985301ef7746395ccc3d48ca659b9/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.foamtrace/photopicker/1.0/336208367b35ce4986e540e59927e8e8452ed435/photopicker-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

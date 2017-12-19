@@ -119,7 +119,6 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-
                     android:id="@+id/et_password"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/action_bar_default_height"
@@ -133,10 +132,10 @@
                     android:maxLines="1"
                     android:textColor="@color/black_80"
                     android:textColorHint="@color/gray_20"
-                    android:textSize="@dimen/default_medium_text_size" />
+                    android:textSize="@dimen/default_medium_text_size"
+                    android:visibility="gone" />
 
                 <Button
-
                     android:id="@+id/yzCode"
                     android:layout_width="90dp"
                     android:layout_height="40dp"
@@ -144,7 +143,8 @@
                     android:layout_marginRight="5dp"
                     android:background="@drawable/border"
                     android:text="获取验证码"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
 
 
                 <EditText
@@ -157,12 +157,11 @@
                     android:drawablePadding="@dimen/default_general_margin"
                     android:drawableStart="@drawable/ic_login_password_default"
                     android:hint="请输入密码"
-                    android:inputType="number"
+                    android:inputType="textPassword"
                     android:maxLines="1"
                     android:textColor="@color/black_80"
                     android:textColorHint="@color/gray_20"
-                    android:textSize="@dimen/default_medium_text_size"
-                    android:visibility="gone" />
+                    android:textSize="@dimen/default_medium_text_size" />
 
             </FrameLayout>
 

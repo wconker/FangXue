@@ -287,29 +287,6 @@
                             android:paddingLeft="@dimen/text_margin"
                             android:textStyle="bold" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="10dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:text="开启通知推送" />
-
-                            <Switch
-                                android:id="@+id/sw_switch"
-
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="10dp"
-                                android:checked="true"
-                                android:textColorHint="@color/colorPrimary"
-                                android:thumbTint="@color/colorPrimary" />
-                        </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/cleancache"
@@ -341,6 +318,70 @@
                                 android:layout_marginRight="10dp"
                                 android:text="0M" />
                         </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/reSetPwd"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:text="设置密码" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginRight="5dp" />
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="10dp"
+                                android:layout_marginRight="10dp"
+                                android:src="@drawable/trunright" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="#eeeeee"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/text_margin"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="开启通知推送" />
+
+                            <Switch
+                                android:id="@+id/sw_switch"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:checked="true"
+                                android:textColorHint="@color/colorPrimary"
+                                android:thumbTint="@color/colorPrimary" />
+                        </LinearLayout>
+
 
                         <LinearLayout
                             android:id="@+id/autoOpen"
@@ -376,8 +417,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
 
                             <TextView
 
@@ -419,6 +459,7 @@
 
                                 android:text="" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:id="@+id/share"
                             android:layout_width="match_parent"
@@ -442,6 +483,7 @@
 
                                 android:text="" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:id="@+id/aboutus"
                             android:layout_width="match_parent"
