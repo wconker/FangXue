@@ -3,6 +3,7 @@ package com.android.fangxue.ui.Detail;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -16,6 +17,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +42,7 @@ import com.android.fangxue.newwork.MessageCenter;
 import com.android.fangxue.utils.JSONUtils;
 import com.android.fangxue.utils.photoPickerUtil.PhotoT;
 import com.android.fangxue.widget.CircleImageView;
+import com.android.fangxue.widget.CommentDialog;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -130,8 +133,19 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
         reviewList.setLayoutManager(new LinearLayoutManager(this));
         setObserver();
         initView();
+        dialog = new CommentDialog(this);
+        dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialogInterface, int keyCode, KeyEvent keyEvent) {
+                if (keyCode == KeyEvent.KEYCODE_BACK && keyEvent.getRepeatCount() == 0)
+                    dialog.cancel();
+                return false;
+            }
+        });
+        dialog.show();
     }
 
+    CommentDialog dialog;
 
     public void setObserver() {
         observer = new Observer<String>() {
@@ -266,8 +280,6 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
 
     protected Transferee transferee;
     protected TransferConfig config;
-
-
     private DisplayImageOptions options;
 
     protected void testTransferee() {

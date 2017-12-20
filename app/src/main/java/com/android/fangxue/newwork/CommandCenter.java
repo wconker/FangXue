@@ -601,4 +601,22 @@ public class CommandCenter {
     }
 
 
+    /**
+     * 写评论
+     *
+     * @return
+     */
+    public String message_getCommentList(int messageid) {
+        jsonObj = new JSONObject();
+        jsonObjArr = new JSONObject();
+        //data部分
+
+        addData(jsonObj, "messageid", messageid);
+
+        //外测json
+        addCmd(jsonObjArr, "message.getCommentList", jsonObj);
+        return jsonObjArr.toString();
+    }
+
+
 }
