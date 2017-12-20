@@ -1,5 +1,29 @@
 [
     {
+        "outputFile": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-w360dp-v13/values-w360dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 54,
+                    "endOffset": 105
+                },
+                "from": {
+                    "file": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/values-w360dp/values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 54,
+                        "endOffset": 106
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-w360dp-v13/values-w360dp-v13.xml",
         "map": [
             {

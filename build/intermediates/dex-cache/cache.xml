@@ -3,75 +3,75 @@
 
     <item
         is-multidex="false"
-        jar="/Fangxue/Git/FangXue/Module/autoScrollViewPager/build/intermediates/bundles/default/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="db6289ba37fdc4f0bd4ed681660281614df50f6f">
-        <dex dex="/Fangxue/Git/FangXue/app/build/intermediates/pre-dexed/debug/classes_fa4935a24dc7da1f0243f4c405c0f4baabadc1b7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Fangxue/Git/FangXue/app/libs/jxl.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="a5447936214d5116a4ad8d90764ed72c2974b2dc">
-        <dex dex="/Fangxue/Git/FangXue/app/build/intermediates/pre-dexed/debug/jxl_756de10cb4ac9fd807a39606cc59069731497a6c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Fangxue/Git/FangXue/Module/PhotoPicker/build/intermediates/bundles/default/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="430792e775ddd16202e200fce674eaf5600b647a">
-        <dex dex="/Fangxue/Git/FangXue/app/build/intermediates/pre-dexed/debug/classes_6ee62d96ac30cdd94c489d99c54820c211437722.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Fangxue/Git/FangXue/UniversalLoader/build/intermediates/bundles/default/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="7e84c39ff72616ca5cb2d3474cfb65aca300a20c">
-        <dex dex="/Fangxue/Git/FangXue/app/build/intermediates/pre-dexed/debug/classes_eeba069d67121e34485abdc55bbb3fcf2a145c1c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/bundles/default/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="e87b1ba63c873263ddfb09a6bffaa47694a51029">
-        <dex dex="/Fangxue/Git/FangXue/app/build/intermediates/pre-dexed/debug/classes_97f6306bdcb5814feb6f0e1cf649ca118bcf2664.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Fangxue/Git/FangXue/Transferee/build/intermediates/bundles/default/classes.jar"
+        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Transferee/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="c96617e43bc7ebd9fab6b9726848bca1be01058c">
-        <dex dex="/Fangxue/Git/FangXue/app/build/intermediates/pre-dexed/debug/classes_286f4a0f1bd10503fbc04405fedd7743f9a4973e.jar" />
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_978d3dc0febe8a42adcc4966a99b02bd537127f8.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Fangxue/Git/FangXue/Module/library/build/intermediates/bundles/default/classes.jar"
+        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/UniversalLoader/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7e84c39ff72616ca5cb2d3474cfb65aca300a20c">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_2fcf9be93d3f423a3dcad0fab565642e238d9950.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/library/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="d9f219df08e53bfc484accb08d1628ce83e82808">
-        <dex dex="/Fangxue/Git/FangXue/app/build/intermediates/pre-dexed/debug/classes_5143bfdccc05c8bf50aaf6905aa841e0efcfa6a1.jar" />
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_58e78dff4fb365e848151b9947f836cae310288e.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Fangxue/Git/FangXue/Module/FlycoTabLayout_Lib/build/intermediates/bundles/default/classes.jar"
+        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/PhotoPicker/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="430792e775ddd16202e200fce674eaf5600b647a">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_81b9519409ab41d3a79230aa321455289995bb00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e87b1ba63c873263ddfb09a6bffaa47694a51029">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_39c6f2f14b4b59baccea81d80d0def13e0ca3678.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/FlycoTabLayout_Lib/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="4744089ba76f30cbe4ee3aaa85f2b10003a11993">
-        <dex dex="/Fangxue/Git/FangXue/app/build/intermediates/pre-dexed/debug/classes_f630f48a86774b4f22e71ecb33d668255fabee02.jar" />
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_78fb915f36f259b24b1e6a53e84e29ea17d21426.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/libs/jxl.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a5447936214d5116a4ad8d90764ed72c2974b2dc">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/jxl_230e2e1bf601ec1f79fd04e19e5b0750156bedd2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/autoScrollViewPager/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="db6289ba37fdc4f0bd4ed681660281614df50f6f">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_dc33ebdc5edd12a59b0cfea1ac5e798cb691c5b6.jar" />
     </item>
 
 </items>

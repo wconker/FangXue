@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context="com.android.fangxue.ui.Detail.NotifyInfo">
 
     <include layout="@layout/layout_toolbar">
@@ -13,6 +15,7 @@
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
+
         android:layout_height="match_parent"
         android:fillViewport="true">
 
@@ -67,7 +70,7 @@
                         android:id="@+id/hoemwork_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="今日作業"
+                        android:text="暂无信息"
                         android:textSize="16dp"
                         android:textStyle="bold"
                         android:transitionName="sharedView" />
@@ -84,7 +87,7 @@
                             android:layout_marginBottom="5dp"
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="5dp"
-                            android:text="conker"
+                            android:text="--"
                             android:textColor="@color/gray_80"
                             android:textSize="10dp"
                             android:textStyle="bold" />
@@ -103,7 +106,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="@dimen/text_margin"
                             android:layout_marginTop="5dp"
-                            android:text="conker"
+                            android:text="--"
                             android:textColor="@color/gray_80"
                             android:textSize="10dp"
                             android:textStyle="bold" />
@@ -114,7 +117,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
                             android:layout_marginTop="5dp"
-                            android:text="2017年10月23日"
+                            android:text="--"
                             android:textColor="@color/gray_80"
                             android:textSize="10dp" />
                     </LinearLayout>
@@ -179,7 +182,8 @@
                         <ImageView
                             android:layout_width="10dp"
                             android:layout_height="10dp"
-                            android:layout_gravity="center" />
+                            android:layout_gravity="center"
+                            android:src="@drawable/readcount" />
 
                         <TextView
                             android:id="@+id/readNum"
@@ -199,8 +203,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
                         android:layout_toRightOf="@+id/t1"
-                        android:orientation="horizontal"
-                        android:visibility="gone">
+                        android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="10dp"
@@ -239,7 +242,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/default_grow_margin"
                     android:layout_marginTop="5dp"
-                    android:text="15条留言"
+                    android:text=""
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -248,8 +251,7 @@
                 android:id="@+id/reviewList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:visibility="gone"></android.support.v7.widget.RecyclerView>
+                android:layout_marginTop="5dp"></android.support.v7.widget.RecyclerView>
         </LinearLayout>
 
 

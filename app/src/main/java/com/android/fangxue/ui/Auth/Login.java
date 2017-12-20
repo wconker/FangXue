@@ -267,17 +267,17 @@ public class Login extends BaseActivity implements MessageCallBack {
 
                             startActivity(new Intent(Login.this, ContactListFist.class));
                             finish();
-                            //
-                        } else {
+
+                        } else if (students.length() > 0) {
                             JSONObject Somestudent = (JSONObject) students.get(0);
                             messageCenter.SendYouMessage(messageCenter.ChooseCommand().selectStudent(JSONUtils.getInt(Somestudent, "studentid", 0)));
+                        } else {
+                            startActivity(new Intent(Login.this, Guide_Res.class));
                         }
 
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                } else {
-                    startActivity(new Intent(Login.this, Guide_Res.class));
                 }
 
                 break;
@@ -303,10 +303,10 @@ public class Login extends BaseActivity implements MessageCallBack {
     //发送只有机器代码的登录信息
     private void sendMess() {
         //看看本地有没有存登录信息，有的话就填充到输入框
-        if (!SharedPrefsUtil.getValue(this, "loginXML", "UserName", "").equals("")) {
+        if (!SharedPrefsUtil.getValue(this, "loginXML", "UserName", "").equals("") &&
+                !SharedPrefsUtil.getValue(this, "loginXML", "UserPWD", "").isEmpty()) {
             et_username.setText(SharedPrefsUtil.getValue(this, "loginXML", "UserName", ""));
-            et_password.setText(SharedPrefsUtil.getValue(this, "loginXML", "UserPWD", ""));
-            Log.e("看看有没有", "sendMess: " + et_username.getText().toString());
+            password.setText(SharedPrefsUtil.getValue(this, "loginXML", "UserPWD", ""));
             messageCenter.SendYouMessage(
                     messageCenter.ChooseCommand().login(et_username.getText().toString(),
                             SharedPrefsUtil.getValue(Login.this, "loginXML", "password", ""),

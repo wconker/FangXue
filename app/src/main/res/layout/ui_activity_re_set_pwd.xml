@@ -37,7 +37,6 @@
                 android:drawableStart="@drawable/ic_login_password_default"
                 android:ellipsize="start"
                 android:hint="新密码"
-                android:inputType="phone"
                 android:singleLine="true"
                 android:textColor="@color/black_80"
                 android:textColorHint="@color/gray_20"

@@ -82,7 +82,7 @@ public class Reg extends Activity implements MessageCallBack {
 
             switch (JSONUtils.getString(cmd, "cmd")) {
 
-                case "parent.regiest":
+                case "system.regist":
                     if (JSONUtils.getInt(cmd, "code", -1) == 1) {
                         SharedPrefsUtil.putValue(Reg.this, "loginXML", "UserName", etMobile.getText().toString());
                         SharedPrefsUtil.putValue(Reg.this, "loginXML", "password", etPwd.getText().toString());
@@ -105,7 +105,6 @@ public class Reg extends Activity implements MessageCallBack {
         @Override
         public void onTick(long l) {
             yzCode.setEnabled(false);
-
             String InvelTime = 60 - time + "s";
             yzCode.setText(InvelTime);
             time++;

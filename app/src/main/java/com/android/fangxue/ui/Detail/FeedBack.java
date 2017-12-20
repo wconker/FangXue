@@ -74,7 +74,7 @@ public class FeedBack extends BaseActivity implements MessageCallBack {
                 finish();
                 break;
             case R.id.btn_submit:
-                messageCenter.SendYouMessage(messageCenter.ChooseCommand().system_feedcontent(feedContext.getText().toString()),this);
+                messageCenter.SendYouMessage(messageCenter.ChooseCommand().sendfeedback(feedContext.getText().toString()), this);
                 break;
             default:
                 Toast.FangXueToast(FeedBack.this, "敬请期待");

@@ -88,7 +88,7 @@ public class HomeWork extends BaseHolder<Homework.DataBean> {
             img.setImageDrawable(context.getResources().getDrawable(R.drawable.username));
 
         photo.setActivity(activity);
-
+        photo.setClickId(d.getId());
         imgc.clear();
         preview.clear();
         for (int i = 0; i < d.getPic().size(); i++) {
@@ -96,6 +96,7 @@ public class HomeWork extends BaseHolder<Homework.DataBean> {
             imgc.add(d.getPic().get(i).getThumbnail());
         }
         photo.setUrl(imgc);
+
         photo.setPreviewPhoto(preview);
         message_content.setText(d.getWorkcontent());
 

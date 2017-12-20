@@ -493,7 +493,7 @@ public class CommandCenter {
         addData(jsonObj, "feedcontent", feedcontent);
 
         //外测json
-        addCmd(jsonObjArr, "parent.sendfeedback", jsonObj);
+        addCmd(jsonObjArr, "sys.sendfeedback", jsonObj);
         return jsonObjArr.toString();
     }
 
@@ -508,13 +508,12 @@ public class CommandCenter {
         //data部分
         addData(jsonObj, "mobile", mobile);
         addData(jsonObj, "code", code);
+        addData(jsonObj, "usertype", "P");
         addData(jsonObj, "parentname", parentname);
         addData(jsonObj, "password", password);
         addData(jsonObj, "finger", finger);
-
-
         //外测json
-        addCmd(jsonObjArr, "parent.regiest", jsonObj);
+        addCmd(jsonObjArr, "system.regist", jsonObj);
         return jsonObjArr.toString();
     }
 
@@ -577,10 +576,27 @@ public class CommandCenter {
         jsonObjArr = new JSONObject();
         //data部分
 
-        addData(jsonObj, "studentno", password);
-        addData(jsonObj, "studentname", code);
+        addData(jsonObj, "password", password);
+        addData(jsonObj, "code", code);
         //外测json
         addCmd(jsonObjArr, "system.modifypassword", jsonObj);
+        return jsonObjArr.toString();
+    }
+
+    /**
+     * 评论
+     *
+     * @return
+     */
+    public String message_addComment(int messageid, String commentContent) {
+        jsonObj = new JSONObject();
+        jsonObjArr = new JSONObject();
+        //data部分
+
+        addData(jsonObj, "messageid", messageid);
+        addData(jsonObj, "commentContent", commentContent);
+        //外测json
+        addCmd(jsonObjArr, "message.addComment", jsonObj);
         return jsonObjArr.toString();
     }
 

@@ -85,6 +85,8 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
     TextView message_content;
     @Bind(R.id.homework_teachername)
     TextView homework_teachername;
+    @Bind(R.id.readNum)
+    TextView readNum;
     @Bind(R.id.icon_font)
     CircleImageView icon_font;
     @Bind(R.id.photo)
@@ -116,8 +118,6 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-
-
         title.setText("详情");
         notifyId = getIntent().getIntExtra("notify", 0);
         messageCenter = new MessageCenter();
@@ -125,7 +125,7 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
         messageCenter.setCallBackInterFace(this);
         messageCenter.SendYouMessage(messageCenter.ChooseCommand().getmessageinfo_HomeWork(notifyId));
         adapater = new NotifyAdapater(this, list);
-        reviewList.setNestedScrollingEnabled(false);
+
         reviewList.setAdapter(adapater);
         reviewList.setLayoutManager(new LinearLayoutManager(this));
         setObserver();
@@ -177,6 +177,7 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
         hoemwork_title.setText(dataBean.getWorktitle());
         homework_author.setText(dataBean.getLesson());
         photo.setActivity(this);
+        readNum.setText(dataBean.getTotal() + "");
         message_content.setText(dataBean.getWorkcontent());
         hoemwork_date.setText(dataBean.getReleasetime());
         homework_teachername.setText(dataBean.getAuthor());
@@ -230,7 +231,6 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
             return new CommadHolder(view);
         }
     }
-
 
 
     private class NineGridAdapter extends CommonAdapter<String> {

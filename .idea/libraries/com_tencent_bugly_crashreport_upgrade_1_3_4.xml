@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.tencent.bugly:crashreport_upgrade-1.3.4">
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/6e9decb959275a0795cf157460f193d90b1ec72c/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/6e9decb959275a0795cf157460f193d90b1ec72c/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/d29be4f152162f88f533628eb82fba402d3b6a82/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/d29be4f152162f88f533628eb82fba402d3b6a82/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

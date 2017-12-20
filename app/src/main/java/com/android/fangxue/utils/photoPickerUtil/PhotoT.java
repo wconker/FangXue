@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.android.fangxue.R;
+import com.android.fangxue.ui.Detail.NotifyInfo;
 import com.foamtrace.photopicker.intent.PhotoPreviewIntent;
 
 import java.util.ArrayList;
@@ -85,14 +86,21 @@ public class PhotoT extends LinearLayout {
         }
         photoAdapter.notifyDataSetChanged();
     }
-    public void setUrl( List<String> photos) {
 
+    public void setUrl(List<String> photos) {
         selectedPhotos.clear();
         if (photos != null) {
             selectedPhotos.addAll(photos);
         }
         photoAdapter.notifyDataSetChanged();
     }
+
+    public void setClickId(int Id) {
+
+        ClickId = Id;
+    }
+
+    private int ClickId = 0;
 
     void init() {
 
@@ -107,10 +115,12 @@ public class PhotoT extends LinearLayout {
         recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(activity, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Preview.setCurrentItem(position); // 当前选中照片的下标
-                Preview.setPhotoPaths(previewPhoto); // 已选中的照片地址
-                activity.startActivityForResult(Preview, 100);
+                if (ClickId > 0) {
+                    Intent intent = new Intent(activity, NotifyInfo.class);
+                    intent.putExtra("notify", ClickId);
+                    activity.startActivity(intent);
 
+                }
 
 
             }

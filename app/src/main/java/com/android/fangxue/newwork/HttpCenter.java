@@ -221,8 +221,12 @@ public class HttpCenter {
 
     private void Reconnect() throws IOException {
         //重连登录部分
+
+        Log.e("ifErrorDisConnect", ifErrorDisConnect+"是");
         if (ifErrorDisConnect == 1) {
+            Log.e("webscoket Phone", SharedPrefsUtil.getValue(context, "loginXML", "UserName", ""));
             String Phone = SharedPrefsUtil.getValue(context, "loginXML", "UserName", "");
+
             if(!Phone.isEmpty()) {
                 String reConnectStr = commandCenter.login(Phone,
                         "",
@@ -274,6 +278,7 @@ public class HttpCenter {
             @Override
             public void onOpen(WebSocket WebSocket, Response response) {
                 HttpCenter.webSocket = WebSocket;
+                Log.e("webscoket", "webscoket Open!");
                 try {
                     Reconnect();
                 } catch (IOException e) {

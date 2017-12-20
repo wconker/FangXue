@@ -32,6 +32,7 @@ import com.android.fangxue.ui.Auth.Login;
 import com.android.fangxue.ui.Contact.ContactList;
 import com.android.fangxue.ui.Detail.FeedBack;
 import com.android.fangxue.ui.Detail.ParentsInfo;
+import com.android.fangxue.ui.Detail.ReSetPwd;
 import com.android.fangxue.ui.MainActivity;
 import com.android.fangxue.ui.Us;
 import com.android.fangxue.utils.ACache;
@@ -109,6 +110,8 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
     LinearLayout txLayout;
     @Bind(R.id.aboutus)
     LinearLayout aboutus;
+    @Bind(R.id.reSetPwd)
+    LinearLayout reSetPwd;
     @Bind(R.id.tx_img)
     CircleImageView txImg;
 
@@ -253,7 +256,7 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
 
     }
 
-    @OnClick({R.id.share, R.id.parent, R.id.loginoout, R.id.relationship, R.id.parent_mobile, R.id.feedbacks, R.id.Childs, R.id.aboutus})
+    @OnClick({R.id.share, R.id.reSetPwd, R.id.parent, R.id.loginoout, R.id.relationship, R.id.parent_mobile, R.id.feedbacks, R.id.Childs, R.id.aboutus})
     void click(View v) {
 
         switch (v.getId()) {
@@ -285,6 +288,9 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
                 startActivity(new Intent(getActivity(), Login.class));
                 getActivity().finish();
                 break;
+            case R.id.reSetPwd:
+                startActivity(new Intent(getActivity(), ReSetPwd.class));
+                break;
             default:
                 Toast.FangXueToast(getActivity(), "敬请期待");
         }
@@ -307,8 +313,8 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
         classinfo.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "studentClassname", ""));
         parentName.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "parentname", ""));
         mobile.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "mobile", ""));
-        if(SharedPrefsUtil.getValue(getActivity(), "userXML", "relationship", "")!=null&&!SharedPrefsUtil.getValue(getActivity(), "userXML", "relationship", "").equals("null"))
-        relationship_txt.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "relationship", ""));
+        if (SharedPrefsUtil.getValue(getActivity(), "userXML", "relationship", "") != null && !SharedPrefsUtil.getValue(getActivity(), "userXML", "relationship", "").equals("null"))
+            relationship_txt.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "relationship", ""));
         refresh.setRefreshing(false);
         versionOfcurrent.setText(SharedPrefsUtil.getValue(getActivity(), "userXML", "version", "维护中"));
     }
@@ -470,6 +476,7 @@ public class settingFragment extends BaseFragment implements MessageCallBack {
                         clearAllCache(getActivity());
                         onPageChange();
                     }
+
                     @Override
                     public void doClick(int pos, View vi) {
                     }
