@@ -98,6 +98,8 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
     RecyclerView reviewList;
     @Bind(R.id.gv_images)
     GridView gvImages;
+    @Bind(R.id.t2)
+    LinearLayout t2;
     private NotifyAdapater adapater;
     List<String> list = new ArrayList<>();
     Context contex = this;
@@ -142,7 +144,6 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
                 return false;
             }
         });
-        dialog.show();
     }
 
     CommentDialog dialog;
@@ -211,11 +212,15 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
 
     }
 
-    @OnClick({R.id.back_btn})
+    @OnClick({R.id.back_btn,R.id.t2})
     void Onclick(View v) {
         switch (v.getId()) {
             case R.id.back_btn:
                 this.finish();
+                break;
+                case R.id.t2:
+
+                    dialog.show();
                 break;
         }
     }

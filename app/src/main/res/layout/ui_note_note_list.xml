@@ -132,7 +132,7 @@
                     <ImageView
                         android:layout_width="18dp"
                         android:layout_height="18dp"
-                        android:src="@drawable/command" />
+                        android:src="@drawable/command_icon" />
 
                     <TextView
                         android:id="@+id/homework_detail_read"

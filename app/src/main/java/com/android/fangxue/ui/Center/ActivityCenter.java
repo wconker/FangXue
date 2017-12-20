@@ -121,7 +121,7 @@ public class ActivityCenter extends BaseActivity {
         });
 
         startService(new Intent(ActivityCenter.this, MyService.class));
-       // OnPiexMothed();
+        OnPiexMothed();
         //检查版本信息
         CheckoutVersion();
     }

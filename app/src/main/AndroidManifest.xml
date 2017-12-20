@@ -114,7 +114,8 @@
         <activity
             android:name=".ui.Detail.NotifyInfo"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".ui.Detail.ChildInfo" />
         <activity android:name=".ui.Pro.ShowBigImg" />
         <activity android:name=".ui.Detail.FeedBack" />
@@ -140,7 +141,6 @@
 
         <activity android:name=".ui.Us" />
         <activity android:name=".ui.Auth.Reg" />
-        <activity android:name=".ui.Detail.T_ImageLoad" />
         <activity android:name=".ui.Auth.Guide_Res" />
         <activity android:name=".ui.Detail.ReSetPwd"></activity>
     </application>

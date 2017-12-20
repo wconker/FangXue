@@ -53,7 +53,7 @@
     </style>
     <style name="inputDialog" parent="@android:style/Theme.Holo.Light.Dialog">
 
-        <item name="android:windowBackground">@color/gray_80</item>
+        <item name="android:windowBackground">@color/white_80</item>
         <!--背景-->
         <item name="android:windowFrame">@null</item>
         <!--设置无边框-->
