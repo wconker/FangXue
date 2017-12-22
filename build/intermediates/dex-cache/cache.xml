@@ -21,12 +21,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/softsea/.android/build-cache/75361a13f5cbf4d747de238fe2dd94787daee174/output/jars/libs/jcore-android_v1.1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="bd9236d57409592b26609d13554b052dacf1c380">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/jcore-android_v1.1.2_451ff68e6fce31a270e44859293332ff0b4fb034.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/library/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="d9f219df08e53bfc484accb08d1628ce83e82808">
         <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_58e78dff4fb365e848151b9947f836cae310288e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/softsea/.android/build-cache/633aea0733e76e541982081fd1a6e2ba49b6b55f/output/jars/libs/janalytics-android_v1.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="df1900dbba537a96fe034dfd9e7467c37c0039be">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/janalytics-android_v1.1.1_7adc58da34998b361ba78bad26e8445f54c1e4cb.jar" />
     </item>
     <item
         is-multidex="false"
@@ -48,12 +66,39 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/softsea/.android/build-cache/633aea0733e76e541982081fd1a6e2ba49b6b55f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ebc28f9700af5eef2c0791faf05a4d13646a5591">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_ddbd69c86aa8af349d129c86def3728e2d321667.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/softsea/.android/build-cache/75361a13f5cbf4d747de238fe2dd94787daee174/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7307428a730fbc49ea2db2030a73aee2818f050a">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_d7a0718887fc880993b1a86d17607951af5a2c9e.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/FlycoTabLayout_Lib/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="4744089ba76f30cbe4ee3aaa85f2b10003a11993">
         <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_78fb915f36f259b24b1e6a53e84e29ea17d21426.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/softsea/.android/build-cache/ffd78f86f6eb50a2eb7409e42f934d62d77883b8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="696fe9ef08bac13982595ecfdd7a22a2c170a0cd">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_bb677e7005a5e10b71bd350196515ad1812bde52.jar" />
     </item>
     <item
         is-multidex="false"

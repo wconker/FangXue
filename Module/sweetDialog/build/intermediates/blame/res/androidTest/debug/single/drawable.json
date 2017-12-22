@@ -4,24 +4,44 @@
         "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/drawable/abc_btn_radio_material.xml"
     },
     {
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
         "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/drawable/abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_item_background_holo_dark.xml",
-        "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/drawable/abc_item_background_holo_dark.xml"
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_tab_indicator_material.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_tab_indicator_material.xml"
     },
     {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_item_background_holo_light.xml",
         "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/drawable/abc_item_background_holo_light.xml"
     },
     {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/success_bow.xml",
+        "source": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/success_bow.xml"
+    },
+    {
         "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_list_selector_holo_dark.xml",
         "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/drawable/abc_list_selector_holo_dark.xml"
     },
     {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/error_center_x.xml",
+        "source": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/error_center_x.xml"
+    },
+    {
         "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
         "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_edit_text_material.xml",
@@ -32,8 +52,20 @@
         "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/drawable/abc_cab_background_top_material.xml"
     },
     {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/dialog_background.xml",
+        "source": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/dialog_background.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/warning_circle.xml",
+        "source": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/warning_circle.xml"
+    },
+    {
         "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/error_center_x.xml",
         "source": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/error_center_x.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_list_selector_background_transition_holo_light.xml"
     },
     {
         "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
@@ -48,44 +80,88 @@
         "source": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/error_circle.xml"
     },
     {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
         "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/warning_circle.xml",
         "source": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/warning_circle.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_textfield_search_material.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/red_button_background.xml",
+        "source": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/red_button_background.xml"
     },
     {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_switch_thumb_material.xml",
         "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/drawable/abc_switch_thumb_material.xml"
     },
     {
-        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_item_background_holo_dark.xml",
-        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/drawable/abc_item_background_holo_dark.xml"
-    },
-    {
         "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/gray_button_background.xml",
         "source": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/gray_button_background.xml"
+    },
+    {
+        "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_tab_indicator_material.xml",
         "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/drawable/abc_tab_indicator_material.xml"
     },
     {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_list_selector_holo_light.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/warning_sigh.xml",
+        "source": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/warning_sigh.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/error_circle.xml",
+        "source": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/error_circle.xml"
+    },
+    {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/warning_circle.xml",
         "source": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/warning_circle.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_cab_background_top_material.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_item_background_holo_light.xml"
     },
     {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/error_circle.xml",
         "source": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/error_circle.xml"
     },
     {
-        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_list_selector_holo_light.xml",
-        "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/drawable/abc_list_selector_holo_light.xml"
-    },
-    {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/success_circle.xml",
         "source": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/success_circle.xml"
     },
     {
+        "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_list_selector_holo_light.xml",
+        "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_btn_check_material.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/blue_button_background.xml",
+        "source": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/blue_button_background.xml"
+    },
+    {
         "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_switch_thumb_material.xml",
         "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_edit_text_material.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_edit_text_material.xml"
     },
     {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/blue_button_background.xml",
@@ -136,12 +212,24 @@
         "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/drawable/abc_cab_background_top_material.xml"
     },
     {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_switch_thumb_material.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_btn_check_material.xml",
         "source": "/Users/conker/.android/build-cache/56fa3098aff191155422412c89ea2dd593efecfe/output/res/drawable/abc_btn_check_material.xml"
     },
     {
         "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/red_button_background.xml",
         "source": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/red_button_background.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/gray_button_background.xml",
+        "source": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/gray_button_background.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/success_circle.xml",
+        "source": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/bundles/debug/res/drawable/success_circle.xml"
     },
     {
         "merged": "/Users/conker/Desktop/FXSQ/andorid/parents/FangXue_Android/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_textfield_search_material.xml",
@@ -190,5 +278,13 @@
     {
         "merged": "/Fangxue/Git/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_btn_check_material.xml",
         "source": "/Users/wukanghui/.android/build-cache/254470257e19a89be58453257ceea640ded5eb13/output/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_cab_background_internal_bg.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/sweetDialog/build/intermediates/res/merged/androidTest/debug/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/Users/softsea/.android/build-cache/44ae3ae716efb3a962bce645e2e0bf4ccbabb937/output/res/drawable/abc_list_selector_holo_dark.xml"
     }
 ]

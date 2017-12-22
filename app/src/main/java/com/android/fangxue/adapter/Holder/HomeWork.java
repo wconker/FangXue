@@ -109,12 +109,13 @@ public class HomeWork extends BaseHolder<Homework.DataBean> {
                 context.startActivity(intent);
             }
         });
-//        if (d.getShow() == 1) {
-
-////            read.setBackground(null);
-//        } else {
-//            read.setVisibility(View.VISIBLE);
-//        }
+        if (d.getShow() == 1) {
+            tv.setTextColor(context.getResources().getColor(R.color.gray));
+            message_content.setTextColor(context.getResources().getColor(R.color.gray));
+        } else {
+            tv.setTextColor(context.getResources().getColor(R.color.font_normal));
+            message_content.setTextColor(context.getResources().getColor(R.color.font_normal));
+        }
 
     }
 

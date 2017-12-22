@@ -104,7 +104,6 @@ public class notifyFragment extends Fragment implements MessageCallBack {
             @Override
             public void onClick(View view) {
                 IsPull = 1;
-
                 messageCenter.SendYouMessage(messageCenter.ChooseCommand().getlist_message(RequestId,
                         search_edit.getText().toString(), "", 0),notifyFragment.this);
 
@@ -128,7 +127,6 @@ public class notifyFragment extends Fragment implements MessageCallBack {
 
             @Override
             public void onNext(String s) {
-
 
                 DealWithData(s);
 

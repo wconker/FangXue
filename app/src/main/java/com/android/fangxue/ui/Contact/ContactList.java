@@ -21,6 +21,7 @@ import com.android.fangxue.newwork.HttpCenter;
 import com.android.fangxue.newwork.MessageCenter;
 import com.android.fangxue.ui.Auth.Login;
 import com.android.fangxue.ui.Center.ActivityCenter;
+import com.android.fangxue.utils.BadgeUtil;
 import com.android.fangxue.utils.JSONUtils;
 import com.android.fangxue.utils.SharedPrefsUtil;
 import com.android.fangxue.utils.Toast;
@@ -111,6 +112,7 @@ public class ContactList extends BaseActivity implements MessageCallBack {
             public void onNext(String s) {
 
                 JSONObject cmd = JSONUtils.StringToJSON(s);
+
                 if (JSONUtils.getString(cmd, "cmd").equals("parent.getstudentlist")) {
                     if (JSONUtils.getInt(cmd, "code", 0) == 1) {
                         list.clear();

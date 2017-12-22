@@ -21,7 +21,9 @@ import com.android.fangxue.callback.ServiceMessage;
 import com.android.fangxue.newwork.HttpCenter;
 import com.android.fangxue.newwork.MessageCenter;
 import com.android.fangxue.ui.Center.ActivityCenter;
+import com.android.fangxue.ui.Contact.ContactList;
 import com.android.fangxue.ui.MainActivity;
+import com.android.fangxue.utils.BadgeUtil;
 import com.android.fangxue.utils.JSONUtils;
 import com.android.fangxue.utils.SharedPrefsUtil;
 
@@ -31,6 +33,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import me.leolin.shortcutbadger.ShortcutBadger;
 import okhttp3.RequestBody;
 import rx.schedulers.NewThreadScheduler;
 
@@ -172,6 +175,12 @@ public class MyService extends Service implements ServiceMessage {
                 broad.putExtra("type", 123);
                 sendBroadcast(broad);
             }
+            if (JSONUtils.getString(cmd, "cmd").equals("system.badge")) {
+                JSONObject br = JSONUtils.getSingleJSON(cmd, "data", 0);
+                Log.e("badge", "Server: "+JSONUtils.getInt(br, "badge", 0) );
+                BadgeUtil.setBadgeCount(context, JSONUtils.getInt(br, "badge", 0), R.drawable.command_icon);
+            }
+
 
 
         }

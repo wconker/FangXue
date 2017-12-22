@@ -19,8 +19,11 @@ import com.android.fangxue.base.BaseActivity;
 import com.android.fangxue.entity.tabs.TabEntity;
 import com.android.fangxue.service.MyService;
 import com.android.fangxue.service.OnePixelReceiver;
+import com.android.fangxue.ui.Auth.Login;
 import com.android.fangxue.ui.MainActivity;
 import com.android.fangxue.utils.ACache;
+import com.android.fangxue.utils.BadgeUtil;
+import com.android.fangxue.utils.SharedPrefsUtil;
 import com.android.fangxue.utils.UpdateManager;
 import com.android.fangxue.utils.ViewFindUtils;
 import com.flyco.tablayout.CommonTabLayout;
@@ -28,6 +31,9 @@ import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 
 import java.util.ArrayList;
+
+import cn.jiguang.analytics.android.api.JAnalyticsInterface;
+import me.leolin.shortcutbadger.ShortcutBadger;
 
 
 public class ActivityCenter extends BaseActivity {
@@ -45,7 +51,8 @@ public class ActivityCenter extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //unregisterReceiver(mOnepxReceiver);
+        JAnalyticsInterface.onPageEnd(this,this.getClass().getCanonicalName());
+        unregisterReceiver(mOnepxReceiver);
     }
 
     @Override
@@ -56,10 +63,11 @@ public class ActivityCenter extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-
+        JAnalyticsInterface.onPageStart(this,this.getClass().getCanonicalName());
+        Log.e("loginXMLonResume", "onCreate: " + SharedPrefsUtil.getValue(this, "loginXML", "UserName", ""));
         if (CurrentPos == 1)
             ((MessageFragment) mFragments.get(CurrentPos)).setCallBackInterFace();
+
     }
 
     @Override

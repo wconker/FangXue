@@ -180,7 +180,7 @@ public class indexFragment extends BaseFragment implements ViewPager.PageTransfo
     //发送通知
     public void setCallBackInterFace(String UserWho) {
 
-        if (SharedPrefsUtil.getValue(getActivity(), "loginXML", "UserName", "").equals("13312345678")) {
+        if (SharedPrefsUtil.getValue(getActivity(), "loginXML", "UserName", "").equals("133123456781")) {
             //只有展示账号显示新闻信息
             newBanner.setVisibility(View.VISIBLE);
             news.setVisibility(View.VISIBLE);

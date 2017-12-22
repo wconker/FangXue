@@ -3,7 +3,7 @@
 buildscript {
     repositories {
         jcenter()
-
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.0'
@@ -16,7 +16,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-
+        mavenCentral()
         maven { url "https://jitpack.io" }
     }
 }
@@ -28,7 +28,6 @@ def supportVersion = "25.3.1"
 project.ext {
     compileSdkVersion = 25
     buildToolsVersion = "25.0.2"
-
     applicationId = "com.hitomi.transferimage"
     minSdkVersion = 14
     targetSdkVersion = 25

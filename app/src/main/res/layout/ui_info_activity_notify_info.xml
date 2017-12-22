@@ -127,7 +127,6 @@
                         android:id="@+id/message_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:layout_marginRight="10dp"
                         android:lineSpacingExtra="2dp"
                         android:lineSpacingMultiplier="1.5"
@@ -153,7 +152,7 @@
                     <GridView
                         android:id="@+id/gv_images"
                         android:layout_width="match_parent"
-                        android:layout_height="1dp"
+                        android:layout_height="wrap_content"
                         android:gravity="center"
                         android:horizontalSpacing="5dp"
                         android:numColumns="3"

@@ -222,20 +222,21 @@ public class HttpCenter {
     private void Reconnect() throws IOException {
         //重连登录部分
 
-        Log.e("ifErrorDisConnect", ifErrorDisConnect+"是");
+        Log.e("ifErrorDisConnect", ifErrorDisConnect + "是==" + SharedPrefsUtil.getValue(context, "loginXML", "UserName", ""));
+
         if (ifErrorDisConnect == 1) {
             Log.e("webscoket Phone", SharedPrefsUtil.getValue(context, "loginXML", "UserName", ""));
             String Phone = SharedPrefsUtil.getValue(context, "loginXML", "UserName", "");
-
-            if(!Phone.isEmpty()) {
+            String pwd = SharedPrefsUtil.getValue(context, "loginXML", "UserPWD", "");//重连接不需要用到密码，
+            if (!Phone.isEmpty()) {
                 String reConnectStr = commandCenter.login(Phone,
+                        "",
                         "",
                         SharedPrefsUtil.getValue(context, "loginXML", "mathinecode", ""),
                         "P");
                 send(reConnectStr);
                 HttpCenter.ifErrorDisConnect = 0;
             }
-
 
 
         } else if (Channel == 100) {
@@ -308,7 +309,6 @@ public class HttpCenter {
                 String msg = message.string();
                 Log.e("服务端返回", msg);
                 JSONObject cmd = JSONUtils.StringToJSON(msg);
-
 
 
                 if (serviceMessage != null) {

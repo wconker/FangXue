@@ -22,6 +22,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -36,9 +38,11 @@ import com.android.fangxue.base.BaseActivity;
 import com.android.fangxue.base.BaseHolder;
 import com.android.fangxue.base.BaseHolder_two;
 import com.android.fangxue.callback.MessageCallBack;
+import com.android.fangxue.entity.Comment;
 import com.android.fangxue.entity.Homework;
 import com.android.fangxue.entity.HomeworkDetail;
 import com.android.fangxue.newwork.MessageCenter;
+import com.android.fangxue.utils.BadgeUtil;
 import com.android.fangxue.utils.JSONUtils;
 import com.android.fangxue.utils.photoPickerUtil.PhotoT;
 import com.android.fangxue.widget.CircleImageView;
@@ -101,7 +105,7 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
     @Bind(R.id.t2)
     LinearLayout t2;
     private NotifyAdapater adapater;
-    List<String> list = new ArrayList<>();
+    List<Comment.DataBean> list = new ArrayList<>();
     Context contex = this;
 
     private int notifyId = 0;
@@ -126,7 +130,7 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
         title.setText("详情");
         notifyId = getIntent().getIntExtra("notify", 0);
         messageCenter = new MessageCenter();
-        SimulationData();
+
         messageCenter.setCallBackInterFace(this);
         messageCenter.SendYouMessage(messageCenter.ChooseCommand().getmessageinfo_HomeWork(notifyId));
         adapater = new NotifyAdapater(this, list);
@@ -142,6 +146,28 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
                 if (keyCode == KeyEvent.KEYCODE_BACK && keyEvent.getRepeatCount() == 0)
                     dialog.cancel();
                 return false;
+            }
+        });
+        dialog.setOnCommitListener(new CommentDialog.OnCommitListener() {
+            @Override
+            public void onCommit(EditText et, View v) {
+                if (!et.getText().toString().isEmpty())
+                    messageCenter.SendYouMessage(messageCenter.ChooseCommand().message_addComment(notifyId, et.getText().toString()));
+            }
+
+            @Override
+            public void onGetLocation() {
+
+            }
+
+            @Override
+            public void onDeleteLocation() {
+
+            }
+
+            @Override
+            public void onAnonymousChecked(CompoundButton buttonView, boolean isChecked) {
+
             }
         });
     }
@@ -166,24 +192,44 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
     }
 
     /* 評論模塊內容預留*/
-    void SimulationData() {
-        list.add("张三");
-        list.add("李四");
-        list.add("王五");
-        list.add("赵六");
-        list.add("其他");
+    void SimulationData(String s) {
+
+        Gson gson = new Gson();
+        Type type = new TypeToken<Comment>() {
+        }.getType();
+        //设置具体信息
+        Comment comment = gson.fromJson(s, type);
+        list.clear();
+        list.addAll(comment.getData());
+        adapater.notifyDataSetChanged();
+
     }
 
     private void DealWithData(String s) {
         JSONObject cmd = JSONUtils.StringToJSON(s);
 
+        if (JSONUtils.getString(cmd, "cmd").equals("system.badge")) {
+            JSONObject br = JSONUtils.getSingleJSON(cmd, "data", 0);
+            Log.e("badge", "DealWithData: "+JSONUtils.getInt(br, "badge", 0) );
+            BadgeUtil.setBadgeCount(this, JSONUtils.getInt(br, "badge", 0), R.drawable.command_icon);
+        }
         if (JSONUtils.getString(cmd, "cmd").equals("message.getinfo")) {
             Gson gson = new Gson();
             Type type = new TypeToken<HomeworkDetail>() {
             }.getType();
             //设置具体信息
             HomeworkDetail homeworData = gson.fromJson(s, type);
+            messageCenter.SendYouMessage(messageCenter.ChooseCommand().message_getCommentList(notifyId));
             setValue(homeworData);
+
+        }
+        if (JSONUtils.getString(cmd, "cmd").equals("message.addComment")) {
+            com.android.fangxue.utils.Toast.FangXueToast(NotifyInfo.this, JSONUtils.getString(cmd, "message"));
+            dialog.cancel();
+            messageCenter.SendYouMessage(messageCenter.ChooseCommand().message_getCommentList(notifyId));
+        }
+        if (JSONUtils.getString(cmd, "cmd").equals("message.getCommentList")) {
+            SimulationData(s);
         }
     }
 
@@ -212,15 +258,15 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
 
     }
 
-    @OnClick({R.id.back_btn,R.id.t2})
+    @OnClick({R.id.back_btn, R.id.t2})
     void Onclick(View v) {
         switch (v.getId()) {
             case R.id.back_btn:
                 this.finish();
                 break;
-                case R.id.t2:
+            case R.id.t2:
 
-                    dialog.show();
+                dialog.show();
                 break;
         }
     }
@@ -239,7 +285,7 @@ public class NotifyInfo extends BaseActivity implements MessageCallBack {
     class NotifyAdapater extends RecycCommomAdapter_Two {
         private final Context mContext;
 
-        NotifyAdapater(Context context, List<String> dataList) {
+        NotifyAdapater(Context context, List<Comment.DataBean> dataList) {
             super(context, dataList);
             this.mContext = context;
         }

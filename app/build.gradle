@@ -8,8 +8,8 @@ android {
         applicationId "com.android.fangxue"
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
 //        jackOptions {
@@ -17,10 +17,13 @@ android {
 //        }
 
         ndk {
-            //设置支持的SO库架构
-            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME: 'com.android.fangxue',
+                    JPUSH_APPKEY : "b7e707549f9a2bf53f4228b3",//JPush上注册的包名对应的appkey.
+                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+            ]
         }
-
     }
     lintOptions {
         checkReleaseBuilds false
@@ -86,4 +89,8 @@ dependencies {
     compile 'com.tencent.bugly:nativecrashreport:latest.release'
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
     testCompile 'junit:junit:4.12'
+    compile 'cn.jiguang.sdk:janalytics:1.1.1' // 此处以JAnalytics 1.1.1 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.2' // 此处以JCore 1.1.2 版本为例。
+    compile "me.leolin:ShortcutBadger:1.1.19@aar"
+
 }

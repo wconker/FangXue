@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
@@ -28,8 +29,7 @@ import com.android.fangxue.utils.Toast;
 public class fangxue extends BroadcastReceiver {
 
     @Override
-    public void onReceive( Context context, Intent intent) {
-
+    public void onReceive(Context context, Intent intent) {
 
 
         if (intent.getAction().equals("android.intent.action.BOOT_COMPLETED")) {
@@ -53,12 +53,21 @@ public class fangxue extends BroadcastReceiver {
 
     public void showNotifictionIcon(Context context, String msg, int type, int id) {
 
-        if (type==123)
-        {
-            loginout(context,msg);
-        }
-        else {
+        if (type == 123) {
+            if (Build.VERSION.SDK_INT >= 23) {
+                if (!Settings.canDrawOverlays(context)) {
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION); //请求弹在其他窗口的权限
+                    context.startActivity(intent);
+                    return;
+                } else {
+                    loginout(context, msg);
 
+                }
+            } else {
+                loginout(context, msg);
+            }
+
+        } else {
             if (!SharedPrefsUtil.getValue(context, "systemXML", "notify", FinalField.POWER_OPEN)) {
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
                 builder.setAutoCancel(true);//点击后消失
@@ -98,6 +107,7 @@ public class fangxue extends BroadcastReceiver {
     }
 
     void loginout(final Context context, String mes) {
+
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context, R.style.MyAlertDialogStyle);
         dialogBuilder.setTitle("下线通知");
         dialogBuilder.setMessage("你的账户在其他地方登录 Over");
