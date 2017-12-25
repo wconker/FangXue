@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginBottom="2dp"
+    android:padding="10dp"
+
+    android:orientation="horizontal">
+
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/timg" />
+
+    <LinearLayout
+        android:id="@+id/goodInfoItme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="罗梅山猪梅肉1号肉"
+            android:textSize="@dimen/default_big_text_size" />
+
+        <TextView
+            android:layout_marginTop="@dimen/default_tiny_padding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="熏肉"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/default_small_text_size" />
+
+        <TextView
+            android:layout_marginTop="@dimen/default_tiny_padding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25.0KG"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/default_small_text_size" />
+
+        <TextView
+            android:layout_marginTop="@dimen/default_tiny_padding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥780"
+            android:textColor="@color/red"
+            android:textSize="@dimen/default_small_text_size" />
+    </LinearLayout>
+</LinearLayout>

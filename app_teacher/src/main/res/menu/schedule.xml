@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/add"
+        android:icon="@drawable/username"
+        android:orderInCategory="1"
+        android:title="新增" />
+    <item
+        android:id="@+id/fromClass"
+        android:icon="@drawable/username"
+        android:orderInCategory="2"
+        android:title="从其他班级复制" />
+    <item
+        android:id="@+id/fromDay"
+        android:icon="@drawable/username"
+        android:orderInCategory="3"
+        android:title="按日期复制" />
+</menu>

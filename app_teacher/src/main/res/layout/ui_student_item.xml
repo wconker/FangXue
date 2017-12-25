@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <com.mcxtzhang.swipemenulib.SwipeMenuLayout
+        android:id="@+id/SwipeMenuLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="1dp"
+        app:ios="false"
+        app:leftSwipe="true"
+        app:swipeEnable="true">
+
+        <LinearLayout
+            android:id="@+id/cv_img_activity"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <com.android.teacher.widget.CircleImageView
+                    android:id="@+id/tx"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/username"
+                    android:transitionName="sharedView" />
+
+                <ImageView
+                    android:id="@+id/arrFlag"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center|right"
+                    android:src="@drawable/isin" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/student_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:textSize="12dp" />
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/hoemwork_date"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginBottom="5dp"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="@color/gray_80" />-->
+
+                </LinearLayout>
+            </FrameLayout>
+
+
+            <!--<ImageView-->
+
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_weight="1"-->
+            <!--android:src="@drawable/trunright" />-->
+        </LinearLayout>
+
+        <!--<android.support.v7.widget.CardView-->
+        <!--android:id="@+id/cv_img_activity"-->
+        <!--android:layout_width="110dp"-->
+        <!--android:layout_height="110dp"-->
+        <!--android:visibility="gone"-->
+        <!--app:cardCornerRadius="90dp"-->
+        <!--app:cardPreventCornerOverlap="true">-->
+
+        <!--</android.support.v7.widget.CardView>-->
+        <!-- 以下都是侧滑菜单的内容依序排列 -->
+
+
+        <Button
+
+            android:id="@+id/edit"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="#d9dee4"
+            android:text="修改"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/del"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@color/red"
+            android:text="删除"
+            android:textColor="@android:color/white" />
+
+    </com.mcxtzhang.swipemenulib.SwipeMenuLayout>
+
+
+</LinearLayout>

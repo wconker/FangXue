@@ -10,12 +10,14 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Module/FlycoTabLayout_Lib" />
             <option value="$PROJECT_DIR$/Module/PhotoPicker" />
+            <option value="$PROJECT_DIR$/Module/Transferee" />
+            <option value="$PROJECT_DIR$/Module/UniversalLoader" />
             <option value="$PROJECT_DIR$/Module/autoScrollViewPager" />
             <option value="$PROJECT_DIR$/Module/library" />
             <option value="$PROJECT_DIR$/Module/sweetDialog" />
-            <option value="$PROJECT_DIR$/Transferee" />
-            <option value="$PROJECT_DIR$/UniversalLoader" />
+            <option value="$PROJECT_DIR$/Module/swipemenulib" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app_teacher" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

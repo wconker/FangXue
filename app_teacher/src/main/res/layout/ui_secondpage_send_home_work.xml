@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="com.android.teacher.ui.SecondPage.SendHomeWork">
+
+    <include layout="@layout/layout_toolbar">
+
+    </include>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:transitionName="sharedView"
+            android:id="@+id/BoxMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="这里是一个标题"
+                android:paddingLeft="10dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:background="#f2f2f2" />
+
+            <EditText
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="这里是内容"
+                android:paddingLeft="10dp" />
+
+            <com.android.teacher.utils.photoPickerUtil.Photo
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/text_margin">
+
+            </com.android.teacher.utils.photoPickerUtil.Photo>
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/black_alpha_30"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/indicator"
+                style="@style/AVLoadingIndicatorView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:indicatorColor="@color/red"
+                app:indicatorName="BallPulseIndicator" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

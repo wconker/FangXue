@@ -1,6 +1,9 @@
-include ':app', ':FlycoTabLayout_Lib', ':autoScrollViewPager', ':library', ':PhotoPicker', ':sweetDialog', ':UniversalLoader', ':Transferee'
+include ':app', ':FlycoTabLayout_Lib', ':autoScrollViewPager', ':library', ':PhotoPicker', ':sweetDialog', ':UniversalLoader', ':Transferee', ':app_teacher', ':swipemenulib'
 project(':FlycoTabLayout_Lib').projectDir=new File('Module/FlycoTabLayout_Lib')
 project(':autoScrollViewPager').projectDir=new File('Module/autoScrollViewPager')
 project(':library').projectDir=new File('Module/library')
 project(':PhotoPicker').projectDir=new File('Module/PhotoPicker')
 project(':sweetDialog').projectDir=new File('Module/sweetDialog')
+project(':swipemenulib').projectDir=new File('Module/swipemenulib')
+project(':Transferee').projectDir=new File('Module/Transferee')
+project(':UniversalLoader').projectDir=new File('Module/UniversalLoader')
