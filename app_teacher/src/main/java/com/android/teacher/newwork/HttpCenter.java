@@ -322,7 +322,13 @@ public class HttpCenter {
 
             @Override
             public void onFailure(IOException e, Response response) {
-                Log.e("onFailure", "websocket 连接问题走这里");
+                Log.e("onFailure", "websocket 执行onFailure=" + e.getMessage());
+
+                try {
+                    webSocket.close(3004, "close");
+                } catch (Exception ex) {
+                    Log.e("onFail", "websocket " +ex.getMessage());
+                }
                 HttpCenter.ifErrorDisConnect = 1;
                 initWebsocket();
             }
@@ -330,23 +336,16 @@ public class HttpCenter {
             @Override
             public void onMessage(ResponseBody message) throws IOException {
                 String msg = message.string();
-
-
                 JSONObject cmd = JSONUtils.StringToJSON(msg);
-
-
                 Log.w("服务器收到了", msg);
                 if (serviceMessage != null) {
                     serviceMessage.onServiceMessage(msg);
                 }
                 if (messageCallBack != null) {
-
                     //fileUtil.writeTxtToFile(getCurrentTime() + msg + "\r\n"); //log 记录
                     messageCallBack.onMessage(msg);
                     ResonseReconnect(msg);
                 }
-
-
             }
 
             @Override

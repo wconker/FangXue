@@ -66,21 +66,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/autoScrollViewPager/build/intermediates/bundles/default/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="db6289ba37fdc4f0bd4ed681660281614df50f6f">
-        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app_teacher/build/intermediates/pre-dexed/debug/classes_dc33ebdc5edd12a59b0cfea1ac5e798cb691c5b6.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/libs/jxl.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="a5447936214d5116a4ad8d90764ed72c2974b2dc">
         <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/jxl_230e2e1bf601ec1f79fd04e19e5b0750156bedd2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/autoScrollViewPager/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="db6289ba37fdc4f0bd4ed681660281614df50f6f">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app_teacher/build/intermediates/pre-dexed/debug/classes_dc33ebdc5edd12a59b0cfea1ac5e798cb691c5b6.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,6 +93,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/library/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d9f219df08e53bfc484accb08d1628ce83e82808">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_58e78dff4fb365e848151b9947f836cae310288e.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/softsea/.android/build-cache/75361a13f5cbf4d747de238fe2dd94787daee174/output/jars/libs/jcore-android_v1.1.2.jar"
         jumboMode="false"
         optimize="true"
@@ -102,12 +111,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/library/build/intermediates/bundles/default/classes.jar"
+        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/UniversalLoader/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="d9f219df08e53bfc484accb08d1628ce83e82808">
-        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_58e78dff4fb365e848151b9947f836cae310288e.jar" />
+        sha1="7e84c39ff72616ca5cb2d3474cfb65aca300a20c">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_daf481d82870b93dd294f9a7ffa6fa1dfdd29a2a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -162,6 +171,15 @@
         revision="26.0.1"
         sha1="e87b1ba63c873263ddfb09a6bffaa47694a51029">
         <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app_teacher/build/intermediates/pre-dexed/debug/classes_39c6f2f14b4b59baccea81d80d0def13e0ca3678.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/Module/Transferee/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c96617e43bc7ebd9fab6b9726848bca1be01058c">
+        <dex dex="/Users/softsea/Desktop/FXSQ/andorid/parents/FangXue/app/build/intermediates/pre-dexed/debug/classes_e391c0f81c30515ce423cc85fad4283ea76b94dd.jar" />
     </item>
     <item
         is-multidex="false"

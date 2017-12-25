@@ -153,6 +153,12 @@
 
                         </LinearLayout>
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginLeft="40dp"
+                            android:background="@color/sampleGray"></View>
+
                         <LinearLayout
 
                             android:id="@+id/setting_school"
@@ -188,6 +194,11 @@
                         </LinearLayout>
 
                     </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="40dp"
+                        android:background="@color/sampleGray"></View>
                     <!--菜单模块-->
 
                     <LinearLayout
@@ -231,6 +242,12 @@
                                 android:background="@drawable/trunright" />
                         </LinearLayout>
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginLeft="40dp"
+                            android:background="@color/sampleGray"></View>
+
                         <LinearLayout
 
                             android:id="@+id/setting_repwd"
@@ -268,6 +285,12 @@
 
 
                         </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginLeft="40dp"
+                            android:background="@color/sampleGray"></View>
 
                         <LinearLayout
 
@@ -308,6 +331,11 @@
                         </LinearLayout>
 
                     </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="40dp"
+                        android:background="@color/sampleGray"></View>
                     <!--菜单模块-->
 
                     <LinearLayout
@@ -350,6 +378,12 @@
 
                         </LinearLayout>
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginLeft="40dp"
+                            android:background="@color/sampleGray"></View>
+
                         <LinearLayout
 
                             android:id="@+id/teacherlist"
@@ -383,6 +417,12 @@
 
                         </LinearLayout>
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginLeft="40dp"
+                            android:background="@color/sampleGray"></View>
+
                         <LinearLayout
 
                             android:id="@+id/schedul"
@@ -415,6 +455,12 @@
 
 
                         </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginLeft="40dp"
+                            android:background="@color/sampleGray"></View>
 
 
                     </LinearLayout> <!--菜单模块-->
@@ -490,7 +536,11 @@
 
 
                         </LinearLayout>
-
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginLeft="40dp"
+                            android:background="@color/sampleGray"></View>
                         <LinearLayout
 
                             android:id="@+id/setting_aboutus"
@@ -523,6 +573,14 @@
 
 
                         </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginLeft="40dp"
+                            android:background="@color/sampleGray">
+
+                        </View>
 
                         <LinearLayout
 
@@ -557,23 +615,34 @@
 
                         </LinearLayout>
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginLeft="40dp"
+                            android:background="@color/sampleGray">
+                            
+                        </View>
+
                         <LinearLayout
 
                             android:id="@+id/loginOut"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:clickable="true"
+                            android:layout_gravity="center"
                             android:gravity="center_vertical"
                             android:orientation="horizontal"
                             android:padding="10dp">
 
 
                             <TextView
+                                android:textColor="@color/white"
+                                android:background="@color/colorPrimary"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="10dp"
-                                android:layout_weight="1"
+
                                 android:gravity="center"
                                 android:text="退出"
                                 android:textSize="@dimen/default_medium_text_size" />
@@ -581,8 +650,14 @@
 
                         </LinearLayout>
 
+
                     </LinearLayout>
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="40dp"
+                        android:background="@color/sampleGray"></View>
 
                 </LinearLayout>
 

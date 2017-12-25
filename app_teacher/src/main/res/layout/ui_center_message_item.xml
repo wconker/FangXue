@@ -96,8 +96,6 @@
 
         </android.support.v7.widget.CardView>
         <!-- 以下都是侧滑菜单的内容依序排列 -->
-
-
         <Button
             android:id="@+id/btnDelete"
             android:layout_width="60dp"
@@ -113,7 +111,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="20dp"
-        android:background="@color/gray" />
+        android:background="@color/sampleGray" />
 
     <TextView
         android:id="@+id/homework_author"

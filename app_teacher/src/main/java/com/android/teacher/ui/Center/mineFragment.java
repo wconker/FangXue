@@ -72,8 +72,6 @@ import rx.functions.Action1;
  * A simple {@link Fragment} subclass.
  */
 public class mineFragment extends BaseFragment implements MessageCallBack {
-
-
     private List<String> mData = new ArrayList<>();
     @Bind(R.id.gv)
     GridView gv;
@@ -313,11 +311,8 @@ public class mineFragment extends BaseFragment implements MessageCallBack {
                                 }
                             }
                         });
-
-
             }
         });
-
         SettingRpwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -325,7 +320,6 @@ public class mineFragment extends BaseFragment implements MessageCallBack {
                 startActivity(Go);
             }
         });
-
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -334,8 +328,6 @@ public class mineFragment extends BaseFragment implements MessageCallBack {
                 intent1.setType("text/plain");
                 startActivity(Intent.createChooser(intent1, "放学神器教师版"));
                 //图片分享
-
-
 //                Intent intent2 = new Intent(Intent.ACTION_SEND);
 //                Uri uri = Uri.fromFile(new File(path));
 //                intent2.putExtra(Intent.EXTRA_STREAM, uri);
@@ -377,7 +369,6 @@ public class mineFragment extends BaseFragment implements MessageCallBack {
 
     private void ChooseImage() {
 
-
         ImageConfig config = new ImageConfig();
         config.minHeight = 400;
         config.minWidth = 400;
@@ -390,14 +381,12 @@ public class mineFragment extends BaseFragment implements MessageCallBack {
         startActivityForResult(intent, 120);
     }
 
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (data == null) {
             return;
         }
-
         if (requestCode == 120) {
             switch (requestCode) {
                 // 选择照片
@@ -435,7 +424,6 @@ public class mineFragment extends BaseFragment implements MessageCallBack {
         ButterKnife.unbind(this);
 
     }
-
     @Override
     public void onMessage(String str) {
 

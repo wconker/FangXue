@@ -13,6 +13,7 @@
     <color name="divider">#ffd2d2d2</color>
     <color name="sampleGray">#eeeeee</color>
     <color name="black_80">#222222</color>
+    <color name="black">#000000</color>
     <color name="gray_20">#B3B3B3</color>
     <color name="yellow_50">#FFD11B</color>
     <color name="yellow_30">#FEA501</color>

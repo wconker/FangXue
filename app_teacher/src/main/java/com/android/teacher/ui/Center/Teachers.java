@@ -100,15 +100,13 @@ public class Teachers extends Activity implements MessageCallBack {
 
             if (JSONUtils.getString(cmd, "cmd").equals("class.getteacherlist")) {
                 if (JSONUtils.getInt(cmd, "code", 0) == 1) {
-                    if (!JSONUtils.getString(cmd, "code").isEmpty()) {
-                        center.put(TeacherNameForCache, s);
-                        list.clear();
-                        Type type = new TypeToken<TeacherBean>() {
-                        }.getType();
-                        TeacherBean dataBean = gson.fromJson(String.valueOf(cmd), type);
-                        list.addAll(dataBean.getData());
-                        adapter.notifyDataSetChanged();
-                    }
+                    center.put(TeacherNameForCache, s);
+                    list.clear();
+                    Type type = new TypeToken<TeacherBean>() {
+                    }.getType();
+                    TeacherBean dataBean = gson.fromJson(String.valueOf(cmd), type);
+                    list.addAll(dataBean.getData());
+                    adapter.notifyDataSetChanged();
                 } else {
                     Toast.FangXueToast(Teachers.this, JSONUtils.getString(cmd, "message"));
                 }

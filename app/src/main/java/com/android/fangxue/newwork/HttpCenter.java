@@ -239,7 +239,7 @@ public class HttpCenter {
             }
 
 
-        } else if (Channel == 100) {
+        } else if (Channel == 100) { //服务部分回掉
             //连接服务部分
             if (serviceMessage != null)
                 serviceMessage.onServiceMessage("1000");
@@ -275,6 +275,7 @@ public class HttpCenter {
         final Request request = new Request.Builder()
                 .url(url).build();
         WebSocketCall webSocketCall = WebSocketCall.create(okHttpClient, request);
+
         webSocketCall.enqueue(new WebSocketListener() {
             @Override
             public void onOpen(WebSocket WebSocket, Response response) {
@@ -299,11 +300,18 @@ public class HttpCenter {
 
             @Override
             public void onFailure(IOException e, Response response) {
-                Log.e("onFailure", "websocket 执行onFailure");
+
+                Log.e("onFailure", "websocket 执行onFailure=" + e.getMessage());
+
+                try {
+                    webSocket.close(3003, "close");
+                } catch (Exception ex) {
+                    Log.e("onFail", "websocket " +ex.getMessage());
+                }
                 HttpCenter.ifErrorDisConnect = 1;
                 initWebsocket();
-            }
 
+            }
             @Override
             public void onMessage(ResponseBody message) throws IOException {
                 String msg = message.string();

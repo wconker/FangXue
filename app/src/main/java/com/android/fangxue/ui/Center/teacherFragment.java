@@ -89,7 +89,7 @@ public class teacherFragment extends Fragment implements MessageCallBack {
         refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                messageCenter.SendYouMessage(messageCenter.ChooseCommand().getteacherlist(),teacherFragment.this);
+                messageCenter.SendYouMessage(messageCenter.ChooseCommand().getteacherlist(), teacherFragment.this);
             }
         });
         messageCenter = new MessageCenter();
@@ -129,8 +129,9 @@ public class teacherFragment extends Fragment implements MessageCallBack {
             Type type = new TypeToken<TeacherBean>() {
             }.getType();
             TeacherBean dataBean = gson.fromJson(String.valueOf(cmd), type);
+            list.clear();
             if (dataBean.getData().size() > 0) {
-                list.clear();
+
                 list.addAll(dataBean.getData());
             }
         }
@@ -146,7 +147,7 @@ public class teacherFragment extends Fragment implements MessageCallBack {
     public void setCallBackInterFace() {
         if (firstLoad == 0) {
             refresh.setRefreshing(true);
-            messageCenter.SendYouMessage(messageCenter.ChooseCommand().getteacherlist(),this);
+            messageCenter.SendYouMessage(messageCenter.ChooseCommand().getteacherlist(), this);
             firstLoad = 1;
         }
         if (!Net.isNetworkAvailable(getActivity())) {
