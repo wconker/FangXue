@@ -62,6 +62,12 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import cn.jiguang.analytics.android.api.JAnalyticsInterface;
+import cn.jiguang.share.android.api.JShareInterface;
+import cn.jiguang.share.android.api.Platform;
+import cn.jiguang.share.android.api.ShareParams;
+import cn.jiguang.share.wechat.Wechat;
+import cn.jiguang.share.wechat.WechatMoments;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import rx.Observable;
 import rx.Observer;
@@ -323,10 +329,24 @@ public class mineFragment extends BaseFragment implements MessageCallBack {
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(Intent.ACTION_SEND);
-                intent1.putExtra(Intent.EXTRA_TEXT, "放学神器教师版App，精准掌握孩子放学时间【http://fangxue.56pt.cn/fx/app/teacher.apk】");
-                intent1.setType("text/plain");
-                startActivity(Intent.createChooser(intent1, "放学神器教师版"));
+//                Intent intent1 = new Intent(Intent.ACTION_SEND);
+//                intent1.putExtra(Intent.EXTRA_TEXT, "放学神器教师版App，精准掌握孩子放学时间【http://fangxue.56pt.cn/fx/app/teacher.apk】");
+//                intent1.setType("text/plain");
+//                startActivity(Intent.createChooser(intent1, "放学神器教师版"));
+
+
+                JShareInterface.init(getActivity());
+                ShareParams sp = new ShareParams();
+                sp.setShareType(Platform.SHARE_WEBPAGE);// 一定要设置分享属性
+                sp.setTitle("dd");
+                sp.setText("dd");
+                sp.setImageData(null);
+
+                sp.setImagePath("");
+
+                JShareInterface.share(WechatMoments.Name, sp, null);
+
+
                 //图片分享
 //                Intent intent2 = new Intent(Intent.ACTION_SEND);
 //                Uri uri = Uri.fromFile(new File(path));
@@ -424,6 +444,7 @@ public class mineFragment extends BaseFragment implements MessageCallBack {
         ButterKnife.unbind(this);
 
     }
+
     @Override
     public void onMessage(String str) {
 

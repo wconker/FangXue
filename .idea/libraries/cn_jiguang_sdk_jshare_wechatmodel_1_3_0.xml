@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="cn.jiguang.sdk:jshare-wechatmodel-1.3.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/736b12e8ddfdd61ccb49cb1d1ae744ae8cf803d3/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/736b12e8ddfdd61ccb49cb1d1ae744ae8cf803d3/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.jiguang.sdk/jshare-wechatmodel/1.3.0/50de33c80895141d82dece8f7623f520d9b0036b/jshare-wechatmodel-1.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -13,12 +13,15 @@ android {
         vectorDrawables.useSupportLibrary = true
         ndk {
             abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64', 'mips', 'mips64'
-            manifestPlaceholders = [
-                    JPUSH_PKGNAME: 'com.android.teacher',
-                    JPUSH_APPKEY : "bf61f3980239a8542314600f",//JPush上注册的包名对应的appkey.
-                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
-            ]
         }
+        manifestPlaceholders = [
+                JSHARE_PKGNAME : 'com.android.teacher',
+                JPUSH_PKGNAME: 'com.android.teacher',
+                JPUSH_APPKEY : "bf61f3980239a8542314600f",//JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+                TENCENT_APPID: "",//腾讯开放平台注册应用得到的 appId
+        ]
+
     }
     buildTypes {
         release {
@@ -82,6 +85,15 @@ dependencies {
 
     compile 'com.zhy:base-adapter:3.0.3'
     compile 'cn.jiguang.sdk:janalytics:1.1.1' // 此处以JAnalytics 1.1.1 版本为例。
-    compile 'cn.jiguang.sdk:jcore:1.1.2' // 此处以JCore 1.1.2 版本为例。
+    compile 'cn.jiguang.sdk:jshare:1.3.0'  // 此处以 JShare 1.3.0 版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
+    compile 'cn.jiguang.sdk:jshare-qqmodel:1.3.0'
+    // 此处以 jshare-qqmodel 1.3.0 版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
+    compile 'cn.jiguang.sdk:jshare-wechatmodel:1.3.0'
+    // 此处以 jshare-wechatmodel 1.3.0 版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
+    compile 'cn.jiguang.sdk:jshare-sinamodel:1.3.0'
+    // 此处以 jshare-sinamodel 1.3.0 版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
+
+    compile 'cn.jiguang.sdk:jcore:1.1.5'  // 此处以 JCore 1.1.5 版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
+
 
 }

@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
@@ -33,6 +34,7 @@ import com.flyco.tablayout.listener.OnTabSelectListener;
 import java.util.ArrayList;
 
 import cn.jiguang.analytics.android.api.JAnalyticsInterface;
+import conkerwkh.com.android.util.SystemUtil;
 import me.leolin.shortcutbadger.ShortcutBadger;
 
 
@@ -63,6 +65,10 @@ public class ActivityCenter extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+
+
+
         JAnalyticsInterface.onPageStart(this,this.getClass().getCanonicalName());
         Log.e("loginXMLonResume", "onCreate: " + SharedPrefsUtil.getValue(this, "loginXML", "UserName", ""));
         if (CurrentPos == 1)

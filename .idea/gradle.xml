@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/Module/swipemenulib" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app_teacher" />
+            <option value="$PROJECT_DIR$/util" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

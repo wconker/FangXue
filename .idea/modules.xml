@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/Module/library/library.iml" filepath="$PROJECT_DIR$/Module/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module/sweetDialog/sweetDialog.iml" filepath="$PROJECT_DIR$/Module/sweetDialog/sweetDialog.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module/swipemenulib/swipemenulib.iml" filepath="$PROJECT_DIR$/Module/swipemenulib/swipemenulib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/util/util.iml" filepath="$PROJECT_DIR$/util/util.iml" />
     </modules>
   </component>
 </project>

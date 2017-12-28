@@ -50,7 +50,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     compile project(':library')
     compile project(':FlycoTabLayout_Lib')
     compile project(':autoScrollViewPager')
@@ -61,7 +60,6 @@ dependencies {
     compile project(':sweetDialog')
     compile project(':Transferee')
     compile project(':UniversalLoader')
-
     compile 'com.zhy:base-adapter:3.0.3'
     compile 'com.jakewharton:butterknife:7.0.0'
     compile 'com.android.support:appcompat-v7:26.+'
@@ -90,8 +88,10 @@ dependencies {
     compile 'com.tencent.bugly:nativecrashreport:latest.release'
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
     testCompile 'junit:junit:4.12'
-    compile 'cn.jiguang.sdk:janalytics:1.1.1' // 此处以JAnalytics 1.1.1 版本为例。
-    compile 'cn.jiguang.sdk:jcore:1.1.2' // 此处以JCore 1.1.2 版本为例。
-    compile "me.leolin:ShortcutBadger:1.1.19@aar"
-
+    compile 'cn.jiguang.sdk:janalytics:1.1.1'
+    // 此处以JAnalytics 1.1.1 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.2'
+    // 此处以JCore 1.1.2 版本为例。
+    compile 'me.leolin:ShortcutBadger:1.1.19@aar'
+    compile project(':util')
 }

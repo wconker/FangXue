@@ -84,8 +84,7 @@ public class SimpleCardFragment extends Fragment implements MessageCallBack {
 //        if (value == null) {
 
 
-        tran.setVisibility(View.GONE);
-        messageCenter.SendYouMessage(messageCenter.ChooseCommand().actual_getList( day),this);
+        messageCenter.SendYouMessage(messageCenter.ChooseCommand().actual_getList(day), this);
 //     } else {
 //            DealWithData(value);
 //        }
@@ -141,7 +140,7 @@ public class SimpleCardFragment extends Fragment implements MessageCallBack {
     private void DealWithData(String s) {
         JSONObject cmd = JSONUtils.StringToJSON(s);
         if (JSONUtils.getString(cmd, "cmd").equals("actual.getList")) {
-            Log.e("课程表数据",s);
+            Log.e("课程表数据", s);
             list.clear();
             if (JSONUtils.getJSONArray(cmd, "data").length() > 0) {
 
@@ -151,16 +150,17 @@ public class SimpleCardFragment extends Fragment implements MessageCallBack {
                 CourseBean dataBean = gson.fromJson(String.valueOf(cmd), type);
                 list.addAll(dataBean.getData());
                 timeFull.setVisibility(View.VISIBLE);
-            }else {
+            } else {
                 list.clear();
                 timeFull.setVisibility(View.GONE);
             }
             adapter.notifyDataSetChanged();
         }
 
+
         //服务器主动推送通知，用于放铃声和记录时间
         if (JSONUtils.getString(cmd, "cmd").equals("system.notify")) {
-            messageCenter.SendYouMessage(messageCenter.ChooseCommand().getnotify(),this);
+            messageCenter.SendYouMessage(messageCenter.ChooseCommand().getnotify(), this);
         }
 
         //客户端主动调取放学及其他时间

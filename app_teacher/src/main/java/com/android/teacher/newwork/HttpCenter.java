@@ -1,7 +1,10 @@
 package com.android.teacher.newwork;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.teacher.callback.MessageCallBack;
 import com.android.teacher.callback.ServiceMessage;
@@ -324,10 +327,11 @@ public class HttpCenter {
             public void onFailure(IOException e, Response response) {
                 Log.e("onFailure", "websocket 执行onFailure=" + e.getMessage());
 
+
                 try {
                     webSocket.close(3004, "close");
                 } catch (Exception ex) {
-                    Log.e("onFail", "websocket " +ex.getMessage());
+                    Log.e("onFail", "websocket " + ex.getMessage());
                 }
                 HttpCenter.ifErrorDisConnect = 1;
                 initWebsocket();
